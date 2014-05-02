@@ -1,0 +1,290 @@
+\input{gost.tex} 
+
+%\graphicspath{{Graphs/}{e_0/}{e_0.25/}{e_0.5/}{medium_reorientation/}{large_reorientation/}%{variant_1/}{variant_2/}{variant_3/}}
+
+\renewcommand{\rmdefault}{cmr} % Шрифт с засечками
+\renewcommand{\sfdefault}{cmss} % Шрифт без засечек
+\renewcommand{\ttdefault}{cmtt} % Моноширинный шрифт
+
+\begin{document}
+
+%\includepdf[pages={1}]{titulDiplom.pdf}
+
+\tableofcontents
+
+\abbrevdef
+\intro
+\chapter{Приближающие свойства резольвенты оператора \\ $ L_1:y^{'}, y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
+Рассмотрим простейший дифференциальный оператор первого порядка $ L_1:y^{'}, y(0)=0 $. Обозначим через $ R_\lambda(L_1) $ его резольвенту, т.е. оператор $ R_\lambda(L_1)=(L_1-\lambda E)^{-1} $, где $ E $ - единичный оператор, $ \lambda $ - спектральный параметр (числовой параметр,  вообще говоря, комплексный). Найдем формулу для резольвенты.
+
+\section{Лемма 1.1}
+\label{lemma1.1}
+
+\textit{Для $ y(x) = R_\lambda(L_1)u$ имеет место формула:}
+
+\begin{equation}
+\begin{array}{c}
+
+y(x) \equiv R_\lambda(L_1)u = \int\limits_0^x e^{\lambda(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Пусть $ y = R_\lambda(L_1)u$. Тогда
+
+\begin{equation}
+\begin{array}{c}
+
+y'- \lambda y = u,
+
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+
+y(0)=0.
+
+\end{array}
+\end{equation}
+
+По методу вариации произвольной постоянной общее решение уравнения (1.2) есть
+
+\begin{equation}
+\begin{array}{c}
+
+y(x)=Ce^{\lambda x} + \int\limits_0^x e^{\lambda(x-t)}u(t)dt,
+
+\end{array}
+\end{equation}
+
+Где $ C $ - произвольная постоянная. Находим эту постоянную из условия (1.3). Получаем $ C = 0 $. Отсюда приходим к формуле (1.1).
+	
+Положим в (1.1) $ \lambda \ -r $, где $ r > 0 $, и рассмотрим операторы $ rR_{-r}(L_1)$. Очевидно, эти операторы имеют вид:
+
+\begin{equation}
+\begin{array}{c}
+
+rR_{-r}(L_1)u = r \int\limits_0^x e^{-r(x-t)}u(t)dt
+
+\end{array}
+\end{equation}
+
+Выясним приближающие свойства операторов (1.5) при $ r \rightarrow \infty$.
+
+\section{Лемма 1.2}
+\label{lemma1.2}
+
+\textit{Для любой функции $ u(x) \in C[0,1] $ имеет место сходимость:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert rR_{-r}(L_1)u-u \Vert _{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty,
+
+\end{array}
+\end{equation}
+
+\textit{ $ \varepsilon $ - произвольное малое положительное число.}
+
+\textbf{Доказательство.} Пусть сначала $ u(x) \in C^1[0,1] $. Тогда
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\int\limits_0^x e^{-r(x-t)}u(t)dt = \frac{1}{r}\bigl\vert_0^x e^{-r(x-t)}u(t) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt = \\
+= \frac{1}{r} \bigl[u(x)-e^{-rx}u(0)-\int\limits_0^x e^{-r(x-t)}u'(t)dt\bigl].
+
+\end{array}
+\end{equation}
+
+Отсюда получаем
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+rR_{-r}(L_1)u = u(x) - e^{-rx}u(0) - \frac{1}{r} (rR_{-r}(L_1)u').
+
+\end{array}
+\end{equation}
+
+Тогда
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+rR_{-r}(L_1)u - u = u(x) - e^{-rx}u(0) - \int\limits_0^x e^{-r(x-t)}u'(t)dt.
+
+\end{array}
+\end{equation}
+
+Далее,
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\bigl| \int\limits_0^x e^{-r(x-t)}u'(t)dt \bigr| \leq \Vert u' \Vert_{C[0,1]} \int\limits_0^x e^{-r(x-t)}dt = \\
+= \frac{1}{r} \Vert u' \Vert_{C[0,1]}.
+(1 - e^{-rx}) 
+\end{array}
+\end{equation}
+
+Тогда
+
+\begin{equation}
+\begin{array}{c}
+
+\bigl| rR_{-r}(L_1)u - u \bigr| \leq e^{-rx} \bigl| u(0) \bigr| + \dfrac{1}{r} (1-e^{-rx})\Vert u' \Vert_{C[0,1]}.
+
+\end{array}
+\end{equation}
+
+В силу того, что первое слагаемое в правой части последней оценки при $ x = 0 $ является константой, не зависящей от $ r $, то на всем отрезке $ [0,1] $ сходимости функций $ rR_{-r}(L_1)u $ к $ u(x) $ при $ r \rightarrow \infty $ мы отсюда не получим. Но если мы рассмотрим отрезок $ [\varepsilon, 1] $, где $ \varepsilon > 0 $ - любое фиксированное как угодно малое число, то тогда $ \Vert e^{-rx}_{C[\varepsilon,1]} = e^{-r\varepsilon} \rightarrow 0 \Vert $ при $ r \rightarrow \infty $. Отсюда следует утверждение леммы для $ u \in C^1[0,1] $.
+
+Пусть теперь $ u(x) \in C[0,1] $. Покажем, что нормы операторов $ eR_{-r}(L_1) $, рассматриваемых как операторы из $  C[0,1] $ в $ C[\varepsilon,1] $, ограничены константой, не зависящей от $ r $.
+
+Действительно, имеем:
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert rR_{-r}(L_1)u \Vert_{C[\varepsilon,1]} \leq \Vert rR_{-r}(L_1)u \Vert_{C[0,1]} = \\
+= \bigl\Vert r\int\limits_0^x e^{-r(x-t)}u(t)dt\bigr\Vert_{C[0,1]} \leq \Vert u\Vert_{C[0,1]}\Vert 1 - e^{-rx}\Vert_{C[0,1]} \leq \Vert u \Vert_{C[0,1]}.
+
+\end{array}
+\end{equation}
+
+Далее, множество функций $ u \in C^1[0,1] $ является всюду плотным в пространстве $ C[0,1] $. (Это следует из теоремы Вейерштрасса об аппроксимации непрерывной функции полиномами). Поэтому по теореме Банаха- Штейнгауза из ограниченности норм операторов $ rR_{-r}(L_1) $ отсюда следует сходимость (1.6) для любой $ u \in C[0,1] $.
+
+Лемма доказана.
+
+Покажем теперь, что приближающие свойства операторов $ rR_{-r}(L_1) $ сохраняются и в пространствах гладких функций, т.е. в пространствах $ C^l[0,1] $.
+
+Пусть сначала $ u \in C^{l-1}[0,1] $. Рассмотрим операторы $ D^kR_{-r}(L_1) \equiv (R_{-r}(L_1)u)_x^{(k)} k = 1,...,l, D^1 \equiv D (Du = u')$.
+
+\section{Лемма 1.3}
+\label{lemma1.3}
+
+\textit{Операторы $ D^kR_{-r}(L_1) $ имеют вид:}
+
+\begin{equation}
+\begin{array}{c}
+
+D^kR_{-r}(L_1)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) - ... + \\
++ (-1)^{k-1}r^{k-1}u(x) + (-1)^kr^k\int\limits_0^x e^{-r(x-t)}u(t)dt, k = 1,...,l.
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Для $ k = 1 $ имеем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+DR_{-r}(L_1)u = (DR_{-r}(L_1)u)_x' = \bigl( \int\limits_0^x e^{-r(x-t)}u(t)dt \bigr)_x' = \\
+= u(x) -r\int\limits_0^x e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Применяем метод математической индукции. Пусть (1.9) выполняется для $ k = m - 1 $, т.е.
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^{m-1}R_{-r}(L_1)u = u^{(m-2)}(x) - ru^{(m-3)}(x) + ... + \\
++ (-1)^{m-2}r^{m-2}u(x) + (-1)^{m-1}r^{m-1}\int\limits_0^x e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Тогда для $ k = m $ получим:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^{m}R_{-r}(L_1)u = D(D^{m-1}R_{-r}(L_1)u) = u^{(m-1)}(x) - ru^{(m-2)}(x) + ... + \\
++ (-1)^{m-2}r^{m-2}u'(x) + (-1)^{m-1}r^{m-1}u(x) + (-1)^mr^m\int\limits_0^x e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Лемма доказана.
+
+\section{Лемма 1.4}
+\label{lemma1.4}
+
+\textit{Если $ u(x) \in C^l[0,1] $, то имеет место сходимость:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert rD^k R_{-r}(L_1)u -u^{(k)}(x) \Vert_{C[\varepsilon ,1} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,...,l.
+
+\end{array}
+\end{equation}
+
+\textit{ $ \varepsilon $ - произвольное малое положительное число.}
+
+\textbf{Доказательство.} Пусть $ k = 1 $. По лемме 1.3 имеем:
+
+\begin{equation}
+\begin{array}{c}
+
+DR_{-r}(L_1)u = u(x) - r\int\limits_0^x e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Далее,
+
+\begin{equation}
+\begin{array}{c}
+
+\int\limits_0^x e^{-r(x-t)}u(t)dt = e^{-rx}\int\limits_0^x e^{rt}u(t)dt = \\
+= e^{-rx} \big\vert_0^x \frac{1}{r} e^{rt}u(t) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt = \\
+= \frac{1}{r}u(x) - \frac{1}{r} e^{-rx}u(0) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt
+
+\end{array}
+\end{equation}
+
+Подставляя (1.12) в (1.11), получим:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+DR_{-r}(L_1)u = e^{-rx}u(0) + \int\limits_0^x e^{-r(x-t)}u'(t)dt
+
+\end{array}
+\end{equation}
+
+или
+
+\begin{equation}
+\begin{array}{c}
+
+DR_{-r}(L_1)u = R_{-r}(L_1)u' + e^{-rx}u(0).
+
+\end{array}
+\end{equation}
+
+Получим аналогичное (1.13) выражение для $ D^kR_{-r}(L_1) $ при $ k > 1 $. В силу (1.13) имеем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+
+
+\begin{equation}
+\begin{array}{c}
+
+\end{document}
