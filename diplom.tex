@@ -276,15 +276,95 @@ DR_{-r}(L_1)u = R_{-r}(L_1)u' + e^{-rx}u(0).
 \end{array}
 \end{equation}
 
-Получим аналогичное (1.13) выражение для $ D^kR_{-r}(L_1) $ при $ k > 1 $. В силу (1.13) имеем:
+Получим аналогичное (1.13) выражение для $ D^kR_{-r}(L_1) $ при $ k > 1 $. 
+
+В силу (1.13) имеем:
 
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
+D^2R_{-r}(L_1)u = D(DR_{-r}(L_1)u) = D[R_{-r}(L_1)u' + e^{-rx}u(0)] = \\
+= DR_{-r}(L_1)u' - re^{-rx}u(0).
 
+\end{array}
+\end{equation}
+
+Опять применяем (1.13), заменив $ u $ на $ u' $.
+
+Получаем:
 
 \begin{equation}
 \begin{array}{c}
+\nonumber
+
+D^2R_{-r}(L_1)u = R_{-r}(L_1)u'' + e^{-rx}u'(0) - re^{-rx}u(0).
+
+\end{array}
+\end{equation}
+
+Покажем, что в общем случае для любого $ k $ справедлива формула:
+
+\begin{equation}
+\begin{array}{c}
+
+D^kR_{-r}(L_1)u = R_{-r}(L_1)u^{(k)} + e^{-rx}u^{(k-1)}(0) -er^{-rx}u^{(k-2)}(0) + ... + \\
++ (-1)^{k-1}r^{k-1}e^{-rx}u(0).
+
+\end{array}
+\end{equation}
+
+Мы показали, что (1.14) выполняется для $ k = 1,2 $. Пусть это соотношение выполняется для $ k = m - 1 $, т.е.
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^{m-1}R_{-r}(L_1)u = R_{-r}(L_1)u^{(m-1)} + e^{-rx}u^{(m-2)}(0) - re^{-rx}u^{(m-3)}(0) + ... + \\
++ (-1)^{m-2}r^{m-2}e^{-rx}u(0).
+
+\end{array}
+\end{equation}
+
+Тогда
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^mR_{-r}(L_1)u = D(D^{m-1}R_{-r}(L_1)u) = DR_{-r}(L_1)u^{(m-1)} + \\
++ D\bigl[e^{-rx}u^{(m-2)}(0) - re^{-rx}u^{(m-3)}(0) + ... + (-1)^{m-2}r^{m-2}e^{-rx}u(0)\bigr].
+
+\end{array}
+\end{equation}
+
+Используя (1.13) с заменой $ u(x) $ на $ u^{(m-1)}(x) $, придём к выражению:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0) + \\
++ r^2e^{-rx}u^{(m-3)}(0) + ... + (-1)^{m-1}r^{m-1}e^{-rx}u(0).
+
+\end{array}
+\end{equation}
+
+Из формулы (1.14) получаем оценку:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\bigl\Vert rD^kR_{-r}(L_1)u - u^{(k)}\bigr\Vert_{C[\varepsilon ,1]} \leq \bigl\Vert rR_{-r}(L_1)u^{(k)} - u^{(k)}\bigr\Vert_{C[\varepsilon ,1]} + e^{-r\varepsilon}\sum\limits_{j=0}^{k-1} r^j\vert u^{(k-j-1)}(0)\vert,
+
+\end{array}
+\end{equation}
+
+И тогда соотношение (1.10) вытекает из леммы 1.2.
+
+\textbf{Замечание}. Если в лемме 1.2 $ u(0) = 0 $, то сходимость (1.6) будет выполняться при $ \varepsilon = 0$, т.е. на всем отрезке $ [0,1] $. Если в лемме 1.4 $ u^{(m)}(0) = 0, m = 0,1,...,k $, , то сходимость 1.10 будет выполняться также при $ \varepsilon = 0 $.
+
+В дальнейшем нам потребуются свойства не только самих операторов $ rR_{-r}(L_1) $, но и их степеней – операторов $ (rR_{-r}(L_1))^k $.
 
 \end{document}
