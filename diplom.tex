@@ -393,6 +393,81 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{array}
 \end{equation}
 
+Заменим обозначение $ \tau $ на $ t $, получим (1.15) при $ k = 2 $. 
 
+Пусть для $ k = m - 1 $ выполняется формула (1.15), т.е.
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^{m-1}u = r^{m-1}\int\limits_0^x\dfrac{(x-t)^{m-2}}{(m-2)!}e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Тогда
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^mu = \Omega_{1r}(\Omega_{1r}^{m-1}u) = r^m\int\limits_0^x e^{-r(x-t)} \int\limits_0^t\dfrac{(t-\tau)^{m-2}}{(m-2)!}e^{-r(t-\tau)}u(\tau)d\tau dt = \\
+= r^me^{-rx}\int\limits_0^x\int\limits_0^t\dfrac{(t-\tau)^{m-2}}{(m-2)!}e^{r\tau}u(\tau)d\tau dt = \\
+= r^me^{-rx}\int\limits_0^x\int\limits_\tau^x\dfrac{(t-\tau)^{m-2}}{(m-2)!}dte^{r\tau}u(\tau)d\tau = \\
+= r^m\int\limits_0^x\dfrac{(x-\tau)^{m-1}}{(m-1)!}e^{-r(x-t)}u(\tau)d\tau,
+
+\end{array}
+\end{equation}
+
+что и требовалось доказать.
+
+\section{Лемма 1.6}
+\label{lemma1.6}
+
+\textit{Если $ u \in C^1[0,1] $, то операторы $ \Omega_{1r}^k $ имеют представление:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{1r}^ku = -\dfrac{r^{k-1}x^{k-1}e^{-rx}}{(k-1)!}u(0) + \Omega_{1r}^{k-1}u - \dfrac{1}{r}\Omega_{1r}^ku',
+
+\end{array}
+\end{equation}
+
+\textit{где $ k \geq 2 $.}
+
+\textbf{Доказательство.} Пусть $ k = 2 $.  Тогда из (1.15) мы получаем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^2u = r^2\int\limits_0^x (x-t)e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+Интегрируем по частям:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^2u = r^2\bigl\lbrace \frac{1}{r} \big\vert_0^x e^{-r(x-t)}(x-t)u(t) - \frac{1}{r} \int\limits_0^x e^{-r(x-t)}[-u(t) + (x - t)u'(t)]dt \bigr\rbrace = \\
+= r \bigl[ -xe^{-rx}u(0) + \int\limits_0^x e^{-r(x-t)}u(t)dt - \int\limits_0^x e^{-r(x-t)}(x-t)u'(t)dt \bigr] = \\
+= -rxe^{-rx}u(0) + \Omega_{1r}u - \dfrac{1}{r}\Omega_{1r}^2u'.
+
+\end{array}
+\end{equation}
+
+Предположим, что (1.16) выполняется для $ k = m - 1, m > 2 $. Тогда
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^{m-1}u = -\dfrac{r^{m-2}x^{m-2}e^{-rx}}{(m-2)!}u(0) + \Omega_{1r}^{m-2}u - \dfrac{1}{r}\Omega_{1r}^{m-1}u.
+
+\end{array}
+\end{equation}
 
 \end{document}
