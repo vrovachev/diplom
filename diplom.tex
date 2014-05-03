@@ -367,4 +367,32 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 
 В дальнейшем нам потребуются свойства не только самих операторов $ rR_{-r}(L_1) $, но и их степеней – операторов $ (rR_{-r}(L_1))^k $.
 
+\section{Лемма 1.5}
+\label{lemma1.5}
+
+\textit{Операторы $ (rR_{-r}(L_1))^k $ имеют вид:}
+
+\begin{equation}
+\begin{array}{c}
+
+(rR_{-r}(L_1))^ku = r^k\int\limits_0^x \dfrac{(x-t)^{k-1}}{(k-1)!}e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Обозначим для краткости $ rR_{-r}(L_1) = \Omega_{1r} $. Тогда для $ k = 2 $ имеем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^2u = r^2\int\limits_0^x e^{-r(x-t)} \int\limits_0^t e^{-r(x-t)} u(\tau)d\tau dt = \\
+= r^2e^{-rx}\int\limits_0^x\int\limits_0^t e^{r\tau}u(\tau)d\tau dt = r^2e^{-rx}\int\limits_0^x\int\limits_\tau^x dte^{r\tau}u(\tau)d\tau = \\
+= r^2e^{-rx}\int\limits_0^x (x-\tau)e^{r\tau}u(\tau)d\tau = r^2\int\limits_0^x (x-\tau)e^{-r(x-t)}u(\tau)d\tau .
+
+\end{array}
+\end{equation}
+
+
+
 \end{document}
