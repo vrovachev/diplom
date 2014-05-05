@@ -470,4 +470,92 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{array}
 \end{equation}
 
+Отсюда
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^mu = r\int\limits_0^x e^{r(x-t)}\bigl[ -\dfrac{r^{m-2}t^{m-2}e^{-rt}}{(m-2)!}u(0) \bigr]dt + \Omega_{1r}(\Omega_{1r}^{m-2}u) - \dfrac{1}{r}\Omega_{1r}(\Omega_{1r}^{m-1}u') = -\dfrac{r^{m-1}x^{m-1}e^{-rx}}{(m-1)!}u(0) + \Omega_{1r}^{m-1}u - \dfrac{1}{r}\Omega_{1r}^mu',
+
+\end{array}
+\end{equation}
+
+что и требовалось доказать.
+
+\section{Лемма 1.7}
+\label{lemma1.7}
+
+\textit{Для $ u(x) \in C[0,1] $ справедливы соотношения:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{1r}^ku - u \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty , k = 1,2,...
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Для $ k = 1 $ соотношение (1.17) доказано в Лемме 1.2.
+Пусть $ k \geq 2 $, а $ u(x) \in C^k[0,1] $ обозначим $ \varphi_l(r,x) = - \dfrac{r^lx^le^{-rx}}{l!} $.
+Из (1.16) имеем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_{1r}^ku - u \Vert_{C[\varepsilon ,1]} \leq \Vert \varphi_{k-1}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \Omega_{1r}^{k-1}u - u \Vert_{C[\varepsilon ,1]} + \Vert \dfrac{1}{r}\Omega_{1r}^ku' \Vert_{C[\varepsilon, 1]} \leq \Vert \varphi_{k-1}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \varphi_{k-2}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + ... + \Vert \varphi_1(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \Omega_{1r}u - u \Vert_{C[\varepsilon ,1]} + \Vert \dfrac{1}{r}\Omega_{1r}^2u' \Vert_{C[\varepsilon, 1]} + \Vert \dfrac{1}{r}\Omega_{1r}^3u' \Vert_{C[\varepsilon, 1]} + ... + \Vert \dfrac{1}{r}\Omega_{1r}^ku' \Vert_{C[\varepsilon, 1]}.
+
+\end{array}
+\end{equation}
+
+Далее, поскольку $ \varphi_l(r,x) \leq r^le^{-r\varepsilon} $ на отрезке $ [\varepsilon ,1] $, то сумма слагаемых, содержащих функции $ \varphi_l(r,x), l = 1,...,k-1  $, имеет оценку $ O(r^{k-1}e^{-r\varepsilon}\Vert u \Vert_{C[0,1]}) $.
+
+По лемме 1.2 $ \Vert \Omega_{1r}u - u \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty $ для любой $ u(x) \in C[0,1] $. 
+
+Осталось показать, что слагаемые, содержащие $ u'(x) $, могут быть как угодно малыми при $ r \rightarrow \infty $, если $ u(x) \in C^k[0,1] $, т.е., что $ \bigl\Vert \dfrac{1}{r}\Omega_{1r}^lu' \bigr\Vert_{C[\varepsilon ,1]} \rightarrow 0$ при $ r \rightarrow \infty $ для $ l = 2,...,k $.
+
+Пусть $ l = 2 $. Тогда из (16) с заменой $ u $ на $ u' $ получим:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\dfrac{1}{r}\Omega_{1r}^2u' = -xe^{-rx}u'(0) + \dfrac{1}{r}\Omega_{1r}u' - \dfrac{1}{r^2}\Omega_{1r}^2u''.
+
+\end{array}
+\end{equation}
+
+Но $ \dfrac{1}{r}\Omega_{1r}u' $ и $ \dfrac{1}{r^2}\Omega_{1r}^2u'' $ есть $ O(\dfrac{1}{r}) $. Действительно,
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\dfrac{1}{r}\vert\Omega_{1r}u'\vert = \bigl\vert \int\limits_0^x e^{-r(x-t)}u'(t)dt \bigr\vert \leq \Vert u' \Vert_{C[0,1]} \int\limits_0^x e^{-r(x-t)}dt = \dfrac{1}{r}(1 - e^{-rx})\Vert u' \Vert_{C[0,1]} \leq \dfrac{1}{r} \Vert u' \Vert_{C[0,1]}.
+
+\end{array}
+\end{equation}
+
+И точно так же
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\dfrac{1}{r^2} \vert \Omega_{1r}^2u'' \vert = \bigl| \int\limits_0^x e^{-r(x-t)}(x-t)u''(t)dt \bigr| \leq \dfrac{1}{r} \Vert u'' \Vert_{C[0,1]}.
+
+\end{array}
+\end{equation}
+
+Для произвольного $ l $ из (1.16) получаем:
+
+\begin{equation}
+\begin{array}{c}
+
+
+
+\end{array}
+\end{equation}
+
 \end{document}
