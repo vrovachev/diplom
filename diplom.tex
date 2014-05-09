@@ -94,7 +94,7 @@ rR_{-r}(L_1)u = r \int\limits_0^x e^{-r(x-t)}u(t)dt
 \nonumber
 
 \int\limits_0^x e^{-r(x-t)}u(t)dt = \frac{1}{r}\bigl\vert_0^x e^{-r(x-t)}u(t) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt = \\
-= \frac{1}{r} \bigl[u(x)-e^{-rx}u(0)-\int\limits_0^x e^{-r(x-t)}u'(t)dt\bigl].
+= \frac{1}{r} \biggl[u(x)-e^{-rx}u(0)-\int\limits_0^x e^{-r(x-t)}u'(t)dt\biggl].
 
 \end{array}
 \end{equation}
@@ -127,7 +127,7 @@ rR_{-r}(L_1)u - u = u(x) - e^{-rx}u(0) - \int\limits_0^x e^{-r(x-t)}u'(t)dt.
 \begin{array}{c}
 \nonumber
 
-\bigl| \int\limits_0^x e^{-r(x-t)}u'(t)dt \bigr| \leq \Vert u' \Vert_{C[0,1]} \int\limits_0^x e^{-r(x-t)}dt = \\
+\biggl| \int\limits_0^x e^{-r(x-t)}u'(t)dt \biggr| \leq \Vert u' \Vert_{C[0,1]} \int\limits_0^x e^{-r(x-t)}dt = \\
 = \frac{1}{r} \Vert u' \Vert_{C[0,1]}.
 (1 - e^{-rx}) 
 \end{array}
@@ -153,7 +153,7 @@ rR_{-r}(L_1)u - u = u(x) - e^{-rx}u(0) - \int\limits_0^x e^{-r(x-t)}u'(t)dt.
 \begin{array}{c}
 
 \Vert rR_{-r}(L_1)u \Vert_{C[\varepsilon,1]} \leq \Vert rR_{-r}(L_1)u \Vert_{C[0,1]} = \\
-= \bigl\Vert r\int\limits_0^x e^{-r(x-t)}u(t)dt\bigr\Vert_{C[0,1]} \leq \Vert u\Vert_{C[0,1]}\Vert 1 - e^{-rx}\Vert_{C[0,1]} \leq \Vert u \Vert_{C[0,1]}.
+= \Bigl\Vert r\int\limits_0^x e^{-r(x-t)}u(t)dt\Bigr\Vert_{C[0,1]} \leq \Vert u\Vert_{C[0,1]}\Vert 1 - e^{-rx}\Vert_{C[0,1]} \leq \Vert u \Vert_{C[0,1]}.
 
 \end{array}
 \end{equation}
@@ -186,7 +186,7 @@ D^kR_{-r}(L_1)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) - ... + \\
 \begin{array}{c}
 \nonumber
 
-DR_{-r}(L_1)u = (DR_{-r}(L_1)u)_x' = \bigl( \int\limits_0^x e^{-r(x-t)}u(t)dt \bigr)_x' = \\
+DR_{-r}(L_1)u = (DR_{-r}(L_1)u)_x' = \Bigl( \int\limits_0^x e^{-r(x-t)}u(t)dt \Bigr)_x' = \\
 = u(x) -r\int\limits_0^x e^{-r(x-t)}u(t)dt.
 
 \end{array}
@@ -452,8 +452,8 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \begin{array}{c}
 \nonumber
 
-\Omega_{1r}^2u = r^2\bigl\lbrace \frac{1}{r} \big\vert_0^x e^{-r(x-t)}(x-t)u(t) - \frac{1}{r} \int\limits_0^x e^{-r(x-t)}[-u(t) + (x - t)u'(t)]dt \bigr\rbrace = \\
-= r \bigl[ -xe^{-rx}u(0) + \int\limits_0^x e^{-r(x-t)}u(t)dt - \int\limits_0^x e^{-r(x-t)}(x-t)u'(t)dt \bigr] = \\
+\Omega_{1r}^2u = r^2\biggl\lbrace \dfrac{1}{r} \Big\vert_0^x e^{-r(x-t)}(x-t)u(t) - \dfrac{1}{r} \int\limits_0^x e^{-r(x-t)}[-u(t) + (x - t)u'(t)]dt \biggr\rbrace = \\
+= r \biggl[ -xe^{-rx}u(0) + \int\limits_0^x e^{-r(x-t)}u(t)dt - \int\limits_0^x e^{-r(x-t)}(x-t)u'(t)dt \biggr] = \\
 = -rxe^{-rx}u(0) + \Omega_{1r}u - \dfrac{1}{r}\Omega_{1r}^2u'.
 
 \end{array}
@@ -471,12 +471,12 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{equation}
 
 Отсюда
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
-\Omega_{1r}^mu = r\int\limits_0^x e^{r(x-t)}\bigl[ -\dfrac{r^{m-2}t^{m-2}e^{-rt}}{(m-2)!}u(0) \bigr]dt + \Omega_{1r}(\Omega_{1r}^{m-2}u) - \dfrac{1}{r}\Omega_{1r}(\Omega_{1r}^{m-1}u') = -\dfrac{r^{m-1}x^{m-1}e^{-rx}}{(m-1)!}u(0) + \Omega_{1r}^{m-1}u - \dfrac{1}{r}\Omega_{1r}^mu',
+\Omega_{1r}^mu = r\int\limits_0^x e^{r(x-t)}\biggl[ -\dfrac{r^{m-2}t^{m-2}e^{-rt}}{(m-2)!}u(0) \biggr]dt +  \Omega_{1r}(\Omega_{1r}^{m-2}u) - \\
+- \dfrac{1}{r}\Omega_{1r}(\Omega_{1r}^{m-1}u') = -\dfrac{r^{m-1}x^{m-1}e^{-rx}}{(m-1)!}u(0) + \Omega_{1r}^{m-1}u - \dfrac{1}{r}\Omega_{1r}^mu',
 
 \end{array}
 \end{equation}
@@ -499,13 +499,14 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \textbf{Доказательство.} Для $ k = 1 $ соотношение (1.17) доказано в Лемме 1.2.
 Пусть $ k \geq 2 $, а $ u(x) \in C^k[0,1] $ обозначим $ \varphi_l(r,x) = - \dfrac{r^lx^le^{-rx}}{l!} $.
 Из (1.16) имеем:
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
-\Vert \Omega_{1r}^ku - u \Vert_{C[\varepsilon ,1]} \leq \Vert \varphi_{k-1}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \Omega_{1r}^{k-1}u - u \Vert_{C[\varepsilon ,1]} + \Vert \dfrac{1}{r}\Omega_{1r}^ku' \Vert_{C[\varepsilon, 1]} \leq \Vert \varphi_{k-1}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \varphi_{k-2}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + ... + \Vert \varphi_1(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \Omega_{1r}u - u \Vert_{C[\varepsilon ,1]} + \Vert \dfrac{1}{r}\Omega_{1r}^2u' \Vert_{C[\varepsilon, 1]} + \Vert \dfrac{1}{r}\Omega_{1r}^3u' \Vert_{C[\varepsilon, 1]} + ... + \Vert \dfrac{1}{r}\Omega_{1r}^ku' \Vert_{C[\varepsilon, 1]}.
-
+\Vert \Omega_{1r}^ku - u \Vert_{C[\varepsilon ,1]} \leq \Vert \varphi_{k-1}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \Omega_{1r}^{k-1}u - u \Vert_{C[\varepsilon ,1]} + \\
++ \biggl\Vert \dfrac{1}{r}\Omega_{1r}^ku' \biggr\Vert_{C[\varepsilon, 1]} \leq \Vert \varphi_{k-1}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \varphi_{k-2}(r,x)u(0) \Vert_{C[\varepsilon, 1]} + ... + \\
++ \Vert \varphi_1(r,x)u(0) \Vert_{C[\varepsilon, 1]} + \Vert \Omega_{1r}u - u \Vert_{C[\varepsilon ,1]} + \biggl\Vert \dfrac{1}{r}\Omega_{1r}^2u' \biggr\Vert_{C[\varepsilon, 1]} + \\
++ \biggl\Vert \dfrac{1}{r}\Omega_{1r}^3u' \biggr\Vert_{C[\varepsilon, 1]} + ... + \biggl\Vert \dfrac{1}{r}\Omega_{1r}^ku' \biggr\Vert_{C[\varepsilon, 1]}.
 \end{array}
 \end{equation}
 
@@ -576,6 +577,183 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{array}
 \end{equation}
 
+Берём интегралы в правых частях (1.19) и (1.20) по частям, каждый раз "перебрасывая" производную на функцию $ u'(t) $ до тех пор, пока перед интегралами не исчезнут степени $ r $, т.е. интегрируем $ l-2 $ раза. Тогда в (1.19) мы придём к интегралу $ \int\limits_0^x e^{-r(x-t)}u^{(l-1)}(t)dt $  а в (1.20) - к интегралу $ \int\limits_0^x e^{-r(x-t)}(x - t)u^l(t)dt $ которые имеют оценки $ O\biggl( \dfrac{1}{r}\Vert u^{(l - 1)} \Vert_{C[0,1]} \biggr) $ и $ O\biggl( \dfrac{1}{r}\Vert u^{(l)} \Vert_{C[0,1]} \biggr) $ соответственно.
 
+Подстановки, которые получаются при интегрировании, будут состоять из функций $ \varphi_m(r,x), m = 1,...,l-3 $ - в формуле (1.19); $ m = 1,...,l-2 $ - в формуле (1.20), умноженных на значения производных функции $ u(x) $ в нуле до $ l-2 $ порядка включительно для формулы (1.19) и до $ l-1 $ порядка включительно для формулы (1.20). Общая сумма этих подстановок и первого слагаемого, стоящего в правой части выражения (1.18), будет иметь порядок $ r^{l-1}e^{-r\varepsilon} $ на отрезке $ [\varepsilon ,1] $.
+Из вышесказанного следует, что соотношения (1.17) выполняются для любой $ u(x) \in C^k[0,1] $. Но множество функций, $ k $ раз непрерывно дифференцируемых, всюду плотно в пространстве $ C[0,1] $ по теореме Вейерштрасса.
+
+Далее нормы операторов $ \Omega_{1r}^k $, рассматриваемых как операторы из $ C[0,1] $ в $ C_\varepsilon [0,1] $, ограничены константами, не зависящими от $ r $, поскольку из (1.8) следует:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_{1r}^ku \Vert_{C[\varepsilon ,1} = \Vert \Omega_{1r}(\Omega_{1r}^{k-1})u \Vert_{C[\varepsilon ,1]} = \Vert \Omega_{1r}\Omega_{1r}...(\Omega_{1r}u) \Vert_{C[\varepsilon ,1]} \leq \Vert u \Vert_{C[0,1]}.
+
+\end{array}
+\end{equation}
+
+
+По теореме Бахана-Штейнгауза соотношение (1.17) справедливо для любой $ u \in C[0,1] $.
+
+Выясним вопрос о приближении производных с помощью операторов $ \Omega_{1r}^k $. Обозначим $ D^m\Omega_{1r}^ku = \dfrac{d^m}{dx^m}\Omega_{1r}^ku, D^1 \equiv D $.
+
+\section{Лемма 1.8}
+\label{lemma1.8}
+
+\textit{Операторы $ D^m\Omega_{1r}^ku $ при $ k \geq 1, m = 0,...,k-1 $ имеют вид}
+
+\begin{equation}
+\begin{array}{c}
+
+D^m\Omega_{1r}^ku = r^k\int\limits_0^x K_{1m}(x,t,k,r)u(t)dt,
+
+\end{array}
+\end{equation}
+
+\textit{где}
+
+\begin{equation}
+\begin{array}{c}
+
+K_{1m}(x,t,k,r) = (-1)^me^{-r(x-t)} \biggl[r^m\dfrac{(x-t)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(x-t)^{k-2}}{(k-2)!} + \\ + C_m^2r^{m-2}\dfrac{(x-t)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(x-t)^{k-m}}{(k-m)!} + \\ 
++ (-1)^m\dfrac{(x-t)^{k-m-1}}{(k-m-1)!}\biggr].
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} По лемме 1.5 операторы $ \Omega_{1r}^k $ имеют вид:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^ku = r^k \int\limits_0^x \dfrac{(x-t)^{k-1}}{(k-1)!}e^{-r(x-t)}u(t)dt, k = 1,2,...
+
+\end{array}
+\end{equation}
+
+Если $ k \geq 2 $, а $ m = 1,2,...,k-2 $, то, очевидно, $ D^m(x-t)^{k-1} = 0 $ при $ t = x $. Эти производные присутствуют в выражениях для $ D^m\Omega_{1r}^ku $ при $ k \geq 2 $, а $ m = 1,2,...,k-1 $. Действительно, обозначим
+
+\begin{equation}
+\begin{array}{c}
+
+K_{10}(x,t,k,r) = e^{-r(x-t)}\dfrac{(x-t)^{k-1}}{(k-1)!}.
+
+\end{array}
+\end{equation}
+
+Тогда будем иметь:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{1r}^ku = r^k \int\limits_0^x K_{10}(x,t,k,r)u(t)dt, \\
+D\Omega_{1r}^ku = r^kK_{10}(x,t,k,r)_{|t=x} + r^k\int\limits_0^x DK_{10}(x,t,k,r)u(t)dt = \\
+= r^k\int\limits_0^x DK_{10}(x,t,k,r)u(t)dt, \\
+D^2\Omega_{1r}^ku = r^kK_{10}(x,t,k,r)_{|_{t=x}} + r^k\int\limits_0^x D^2K_{10}(x,t,k,r)u(t)dt.
+
+\end{array}
+\end{equation}
+
+В выражении $ DK_{10}(x,t,k,r) $, очевидно, будут присутствовать степени $ (x-t)^l $, начиная с $ l = k - 2 $, поэтому, $ DK_{10}(x,t,k,r)_{|t=x} = 0 $ и
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^2\Omega_{1r}^ku = r^k\int\limits_0^x D^2K_{10}(x,t,k,r)u(t)dt.
+
+\end{array}
+\end{equation}
+
+
+Продолжая процесс дифференцирования с учетом того, что $ D^2K_{10}(x,t,k,r) $ содержит степени $ (x-t)^l $, начиная с $ l = k - 3 $, $ D^3K_{10}(x,t,k,r) \rightarrow c_0 $  степени $ l = k - 4 $, $ D^{k-2}K_{10}(x,t,k,r)_{|t=x} $ - начиная со степени $ l = 1 $. Поскольку $ D^{k-2}K_{10}(x,t,k,r)_{|t=x} $ присутствует в выражении $ D^{k-1}\Omega_{1r}^ku $, то получаем, что для любого $ m \leq k - 1, k \geq 2 $ справедлива формула:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^mK_{10}(x,t,k,r)u(t)dt
+
+\end{array}
+\end{equation}
+
+Или, в соответствии с (1.23)
+
+\begin{equation}
+\begin{array}{c}
+
+D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^m\biggl[\dfrac{(x-t)^{k-1}}{(k-1)!}e^{-r(x-t)}\biggr]u(t)dt.
+
+\end{array}
+\end{equation}
+
+Отсюда видно, что для указанных значений $ m $ и $ k $ производные $ D^m\Omega_{1r}^ku $ имеют интегральный вид.
+
+При дальнейшем дифференцировании подстановки при $ t = x $ уже не будут равны нулю.
+
+
+Найдем конкретные выражения для $ D^mK_{10}(x,t,k,r) $.
+
+
+Обозначим для простоты $ \varphi_l(x,t) = \dfrac{(x-t)^l}{l!} $.
+Тогда $ D^mK_{10}(x,t,k,r) = D^m[e^{-r(x-t)}\varphi_{k-1}(x,t)]$.
+Учтем, что $ D\varphi_l(x,t) = \varphi_{l-1}(x,t) $.
+Тогда получим
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+DK_{10}(x,t,k,r) = e^{-r(x-t)}[-r\varphi_{k-1}(x,t) + \varphi_{k-2}(x,t)] = \\
+= -e^{-r(x-t)}[r\varphi_{k-1}(x,t) - \varphi_{k-2}(x,t)], \\
+D^2K_{10}(x,t,k,r) = e^{-r(x-t)}\lbrace r^2\varphi_{k-1}(x,t) - r\varphi_{k-2}(x,t) - \\ - [r\varphi_{k-2}(x,t) - \varphi_{k-3}(x,t)]\rbrace = e^{-r(x-t)}[r^2\varphi_{k-1}(x,t) - \\ -2r\varphi_{k-2}(x,t) + \varphi_{k-3}(x,t)], \\
+D^3K_{10}(x,t,k,r) = e^{-r(x-t)}[r^3\varphi_{k-1}(x,t) -  2r^2\varphi_{k-2}(x,t) + \\ + r\varphi_{k-3}(x,t)] + e^{-r(x-t)}[r^2\varphi_{k-2}(x,t) - 2r\varphi_{k-3}(x,t) + \varphi_{k-4}(x,t)] = \\
+= -e^{-r(x-t)}\lbrace r^3\varphi_{k-1}(x,t) - 2r^2\varphi_{k-2}(x,t) + r\varphi_{k-3}(x,t) - \\ - r^2\varphi_{k-2}(x,t) + 2r\varphi_{k-3}(x,t) - \varphi_{k-4}(x,t)\rbrace = \\ = -e^{-r(x-t)}[r^3\varphi_{k-1}(x,t) -3r^2\varphi_{k-2}(x,t) + 3r\varphi_{k-3}(x,t) - \varphi_{k-4}(x,t)].
+
+\end{array}
+\end{equation}
+
+Применяем метод математической индукции.
+
+Пусть для $ m = l $ выполняется:
+
+\begin{equation}
+\begin{array}{c}
+
+D^lK_{10}(x,t,k,r) = (-1)^le^{-r(x-t)}[r^l\varphi_{k-1}(x,t) - \\ - lr^{l-1}\varphi_{k-2}(x,t) + C_l^2r^{l-2}\varphi_{k-3}(x,t) + ... + \\ + (-1)^{l-1}C_l^{l-1}r\varphi_{k-l}(x,t) + (-1)^l\varphi_{k-l-1}(x,t)].
+
+\end{array}
+\end{equation}
+
+Найдём $ D^{l+1}K_{10}(x,t,k,r) $. Имеем из (1.25):
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^{l+1}K_{10}(x,t,k,r) = D(D^lK_{10}(x,t,k,r)) = D\lbrace (-1)^le^{-r(x-t)}[r^l\varphi_{k-1}(x,t) - \\
+- lr^{l-1}\varphi_{k-2}(x,t) + C_l^2r^{l-2}\varphi_{k-3}(x,t) + ... + \\ + (-1)^{l-1}C_l^{l-1}r\varphi_{k-l}(x,t) + (-1)^l\varphi_{k-l-1}(x,t)\rbrace .
+
+\end{array}
+\end{equation}
+
+Получим:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+
+
+\end{array}
+\end{equation}
+
+Соберём члены с одинаковыми степенями . Тогда при  с точностью до знака будет стоять коэффициент , при   будет стоять коэффициент .
+В общем случае при  будет коэффициент
+
+Отсюда получаем формулу (25) с заменой  на . Наконец, подставляя в  вместо  выражения , получим утверждение леммы 1.8.
 
 \end{document}
