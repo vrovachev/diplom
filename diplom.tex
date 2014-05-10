@@ -14,7 +14,7 @@
 
 \abbrevdef
 \intro
-\chapter{Приближающие свойства резольвенты оператора \\ $ L_1:y^{'}, y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
+\chapter{Приближающие свойства резольвенты оператора \\ $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
 Рассмотрим простейший дифференциальный оператор первого порядка $ L_1:y^{'}, y(0)=0 $. Обозначим через $ R_\lambda(L_1) $ его резольвенту, т.е. оператор $ R_\lambda(L_1)=(L_1-\lambda E)^{-1} $, где $ E $ - единичный оператор, $ \lambda $ - спектральный параметр (числовой параметр,  вообще говоря, комплексный). Найдем формулу для резольвенты.
 
 \section{Лемма 1.1}
@@ -746,14 +746,182 @@ D^{l+1}K_{10}(x,t,k,r) = D(D^lK_{10}(x,t,k,r)) = D\lbrace (-1)^le^{-r(x-t)}[r^l\
 \begin{array}{c}
 \nonumber
 
-
+D^{l+1}K_{10}(x,t,k,r) = (-1)^{l+1}e^{-r(x-t)}[r^{l+1}\varphi_{k-1}(x,t) - lr^l\varphi_{k-2}(x,t) + \\ + C_l^2r^{l-1}\varphi_{k-3}(x,t) + ... + (-1)^lC_l^{l-1}r^2\varphi_{k-1}(x,t) + (-1)^lr\varphi_{k-l-1}(x,t)] + \\ + (-1)^le^{r(x-t)}[r^l\varphi_{k-2}(x,t) - lr^{l-1}\varphi_{k-3}(x,t) + C_l^2r^{l-2}\varphi_{k-4}(x,t) + ... + \\ + (-1)^{l-1}C_l^{l-1}r\varphi_{k-l-1}(x,t) + (-1)^l\varphi_{k-l-2}(x,t)] = \\
+= (-1)^{l+1}e^{-r(x-t)}\lbrace r^{l+1}\varphi_{k-1}(x,t) - lr^l\varphi_{k-2}(x,t) + C_l^2r^{l-1}\varphi_{k-3}(x,t) + \\ + ... + (-1)^{l-1}C_l^{l-1}r^2\varphi_{k-l}(x,t) + (-1)^lr\varphi_{k-l-1}(x,t) - r^l\varphi_{k-2}(x,t) + \\ + lr^{l-1}\varphi_{k-3}(x,t) - C_l^2r^{l-2}\varphi_{k-4}(x,t) + ... + (-1)^{l-1}C_l^{l-1}\varphi_{k-l-1}(x,t) - \\ - (-1)^l\varphi_{k-l-2}(x,t)\rbrace .
 
 \end{array}
 \end{equation}
 
-Соберём члены с одинаковыми степенями . Тогда при  с точностью до знака будет стоять коэффициент , при   будет стоять коэффициент .
-В общем случае при  будет коэффициент
+Соберём члены с одинаковыми степенями $ r $. Тогда при $ r^l\varphi_{k-2}(x,t) $ с точностью до знака будет стоять коэффициент $ l + 1 $, при $ r^{l-1}\varphi_{k-3}(x,t) - C_l^2 + l = \frac{l(l-1)}{2} + l = \frac{(l+1)l}{2} = C_{l+1}^2$.
+В общем случае при $ r^{l-j}\varphi_{k-2-j} $ будет коэффициент
 
-Отсюда получаем формулу (25) с заменой  на . Наконец, подставляя в  вместо  выражения , получим утверждение леммы 1.8.
+\begin{equation}
+\begin{array}{c}
+\nonumber
 
+C_l^j + C_l^{j+1} = \dfrac{l(l-1)...(l-j+1)}{j!} + \dfrac{l(l-1)...(l-j)}{(j+1)!} = \\
+= \dfrac{l(l-1)(l-j+1)}{(j+1)!}(j+1+l-j) = C_{l+1}^{j+1}.
+
+\end{array}
+\end{equation}
+
+Отсюда получаем формулу (1.25) с заменой $ l $ на $ l + 1 $. Наконец, подставляя в $ m $ вместо $ l $ выражения $ \varphi_l(x,t) $, получим утверждение леммы 1.8.
+
+\section{Лемма 1.9}
+\label{lemma1.9}
+\textit{При $ k \geq 2, m=1,...,k-1 $ для любой функции $ u(x) \in C^{k-1}[0,1] $ справедливы соотношения:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m\Omega_{1r}^ku - u^{(m)} \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty,
+
+\end{array}
+\end{equation}
+\textit{Где $ D^m\Omega_{1r}^ku $ определены в (1.21)-(1.22).}
+
+\textbf{Доказательство.} Пусть $ k = 2 $. Тогда в соответствии с (1.19), интегрируя по частям, получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D\Omega_{1r}^2u = r^2\int\limits_0^x \dfrac{d}{dx}[e^{-r(x-t)}(x-t)]u(t)dt = \\ = -r^2\int\limits_0^x \dfrac{d}{dx}[e^{-r(x-t)}(x-t)]u(t)dt = r^2xe^{-rx}u(0) + \Omega_{1r}^2u'.
+
+\end{array}
+\end{equation}
+Отсюда получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D\Omega_{1r}^2u - u' \Vert_{C[\varepsilon ,1]} \leq r^2e^{-r\varepsilon}\vert u(0) \vert + \Vert \Omega_{1r}^2u' - u' \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty
+
+\end{array}
+\end{equation}
+по Лемме 1.7.
+Для $ k = 3 $ имеем:
+\begin{equation}
+\begin{array}{c}
+
+D\Omega_{1r}^3u = r^3 \int\limits_0^x \dfrac{d}{dx} \biggl[ e^{-r(x-t)}\dfrac{(x-t)^2}{2} \biggr] u(t)dt = \\
+= -r^3 \int\limits_0^x \dfrac{d}{dx} \biggl[ e^{-r(x-t)}\dfrac{(x-t)^2}{2} \biggr] u(t)dt =
+r^3\dfrac{x^2}{2}e^{-rx}u(0) + \Omega_{1r}^3u',
+
+\end{array}
+\end{equation}
+И точно так же, как для $ k = 2 $,
+\begin{equation}
+\begin{array}{c}
+
+\Vert D\Omega_{1r}^3u - u' \Vert_{C[\varepsilon ,1]} \leq r^3e^{-r\varepsilon}\vert u(0) \vert + \Vert \Omega_{1r}^3u' - u' \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty
+
+\end{array}
+\end{equation}
+
+Далее, из (27) получаем:
+
+\begin{equation}
+\begin{array}{c}
+
+D^2\Omega_{1r}^3u = D(D\Omega_{1r}^3u) = r^3D(\dfrac{x^2}{2}e^{-rx})u(0) + D\Omega_{1r}^3u'.
+
+\end{array}
+\end{equation}
+Снова применяем формулу (27) с заменой  на  и получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D^2\Omega_{1r}^3u - u'' \Vert_{C[\varepsilon ,1]} \leq \dfrac{3}{2}r^4e^{-r\varepsilon}(\vert u(0)\vert + \vert u'(0) \vert) + \Vert D\Omega_{1r}^3u' - u'' \Vert_{C[\varepsilon ,1]}.
+
+\end{array}
+\end{equation}
+Из (28) заменяя $ u $ на $ u' $, получаем, что $ \Vert D^2\Omega_{1r}^3u - u'' \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty $.
+
+Действуем так же, как и в случае любого $ m $, т.е. сначала получаем формулу, аналогичную (1.29), а затем пользуемся леммой 1.7.
+
+В соответствии с (1.24) имеем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^m \biggl[ \dfrac{(x-t)^{k-1}}{(k-1)!}e^{-r(x-t)} \biggr]u(t)dt = r^k\int\limits_0^x D^mK_{10}(x,t,k,r)u(t)dt.
+
+\end{array}
+\end{equation}
+Далее,
+\begin{equation}
+\begin{array}{c}
+
+\int\limits_0^x D^mK_{10}(x,t,k,r)u(t)dt = \int\limits_0^x D(D^{m-1}K_{10}(x,t,k,r))u(t)dt = \\ 
+= - \int\limits_0^x \dfrac{d}{dt}(D^{m-1}K_{10}(x,t,k,r))u(t)dt = [D^{m-1}K_{10}(x,t,k,r)]_{t=0}u(0) + \\ \int\limits_0^x D^{m-1}K_{10}(x,t,k,r)u'(t)dt = [D^{m-1}K_{10}(x,t,k,r)]_{t=0}u(0) + \\ + [D^{m-2}K_{10}(x,t,k,r)]_{t=0}u'(0) + ... + [D^2K_{10}(x,t,k,r)]_{t=0}u^{(m-3)}(0) + \\ + [DK_{10}(x,t,k,r)]_{t=0}u^{(m-2)}(0) + K_{10}(x,t,k,r)_{t=x}u^{(m-1)}(0) + \\ + \int\limits_0^x K_{10}(x,t,k,r)u^{(m)}(t)dt.
+
+\end{array}
+\end{equation}
+Поскольку в лемме 1.8 $ D^lK_{10}(x,t,k,r) = K_{1l}(x,t,k,r) $, где $ K_{1l}(x,t,k,r) $ имеет вид (1.22) с заменой $ m $ на $ l $, то отсюда следует, что все подстановки в выражении (1.30) есть $ O(r^{m-1}e^{-r\varepsilon}) $ на отрезке $ [\varepsilon ,1] $.
+
+Отсюда получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D^m\Omega_{1r}^ku - u^{(m)} \Vert_{C[\varepsilon ,1]} = \Vert \Omega_{1r}^ku^{(m)} - u^{(m)} \Vert_{C[\varepsilon ,1]} + O(r^{k+m-1}e^{-r\varepsilon}).
+
+\end{array}
+\end{equation}
+Из леммы 1.7 следует соотношение (1.26).
+
+\chapter{Приближающие свойства резольвенты оператора \\ $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.}
+Рассмотрим оператор $ L_2: y', y(1) = 0 $, отличающийся от оператора $ L_1 $ лишь граничным условием.
+
+Обозначим его резольвенту $R_\lambda(L_2)$. Положим $ \lambda = r, r > 0 $ и рассмотрим оператор $ -rR_r(L_2) $.
+
+Получим аналоги лемм 1.1-1.9.
+
+\section{Лемма 2.1}
+\label{lemma2.1} 
+\textit{Для $ y(x) = R_\lambda(L_2) $ имеет место формула:}
+\begin{equation}
+\begin{array}{c}
+
+y(x) \equiv R_\lambda(L_2)u = -\int\limits_x^1 e^{\lambda (x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+\textbf{Доказательство.} Если $ y = R_\lambda(L_2) $, то
+
+\begin{equation}
+\begin{array}{c}
+
+y' - \lambda y = u,
+
+\end{array}
+\end{equation}
+\begin{equation}
+\begin{array}{c}
+
+y(1) = 0.
+
+\end{array}
+\end{equation}
+
+Общее решение уравнения (2.2) из доказательства леммы 1.1 имеет вид (1.4).
+
+Найдём $ С $ из условия (2.3):
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+Ce^\lambda + \int\limits_0^1 e^{\lambda (1-t)}u(t)dt = 0,
+
+\end{array}
+\end{equation}
+откуда
+\begin{equation}
+\begin{array}{c}
+
+C = - 
+
+\end{array}
+\end{equation}
 \end{document}
