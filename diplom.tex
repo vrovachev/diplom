@@ -920,7 +920,129 @@ Ce^\lambda + \int\limits_0^1 e^{\lambda (1-t)}u(t)dt = 0,
 \begin{equation}
 \begin{array}{c}
 
-C = - 
+C = - \int\limits_0^1 e^{-\lambda t}u(t)dt.
+
+\end{array}
+\end{equation}
+Подставив (2.4) в (1.4), получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+y(x) - -e^{\lambda t}\int\limits_0^1 e^{-\lambda t}u(t)dt + \int\limits_0^x e^{\lambda (x-t)}u(t)dt = -\int\limits_x^1 e^{\lambda (x-t)}u(t)dt,
+
+\end{array}
+\end{equation}
+что и требовалось доказать.
+
+Положим в (2.1) $ \lambda =-r $, где $ r > 0 $ и рассмотрим операторы $ -rR_r(L_2) $.
+
+\section{Лемма 2.2}
+\label{lemma2.2}
+\textit{Для любой непрерывной функции $ u(x) $ имеет место сходимость:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert -rR_r(L_2)u - u \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty
+
+\end{array}
+\end{equation}
+\textit{где $ \varepsilon $ - любое малое положительное число.}
+
+\textbf{Доказательство.} Так же, как в лемме 1.2, сначала докажем сходимость (2.5) для $ u(x) \in C^1[0,1] $. Тогда имеем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\int\limits_x^1 e^{r(x-t)}u(t)dt = e^{rx}\int\limits_x^1 e^{-rt}u(t)dt = -e^{rx}\dfrac{1}{r}\biggl[ e^{-rt}u(t)dt\bigg\vert_x^1 - \int\limits_x^1 e^{-rx}u'(t)dt\biggr] = \dfrac{1}{r}u(x) - \dfrac{1}{r}e^{-r(1-x)}u(1) + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}u'(t)dt.
+
+\end{array}
+\end{equation}
+Отсюда имеем:
+\begin{equation}
+\begin{array}{c}
+
+\Vert -rR_r(L_2)u - u \Vert_{C[0,1-\varepsilon]} \leq \vert u(1) \vert e^{-r\varepsilon} + \Vert u' \Vert_{C[0,1]}\times\biggl\Vert \int\limits_x^1 e^{r(x-t)}dt\biggr\Vert_{C[0,1-\varepsilon]},
+
+\end{array}
+\end{equation}
+\begin{equation}
+\begin{array}{c}
+
+\int\limits_x^1 e^{r(x-t)}dt = -\dfrac{1}{r}(e^{-r(1-x)}-1) \leq \dfrac{1}{r},
+
+\end{array}
+\end{equation}
+а из этой оценки и оценки (2.6) получаем (2.5).
+
+Пусть теперь $ u(x) \in C[0,1] $. Покажем, что нормы операторов $ -rR_r(L_2) $, рассматриваемых как операторы из $ C[0,1] $ в $ C[0,1-\varepsilon] $, ограничены константой, не зависящей от $ r $.
+
+Действительно
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert -rR_r(L_2)u \Vert_{C[0,1-\varepsilon]} \leq \Vert -rR_r(L_2)u \Vert_{C[0,1]} = \biggl\Vert r\int\limits_x^1 e^{r(x-t)}u(t)dt\biggr\Vert_{C[0,1]} \leq \Vert u \Vert_{C[0,1]}
+
+\end{array}
+\end{equation}
+в силу оценки (2.7).
+
+Далее, как в лемме 1.2~\eqref{lemma1.2}, применяем теорему Банаха-Штейнгауза к операторам $ -rR_r(L_2) $ и получаем утверждение леммы 2.2~\eqref{lemma2.2}.
+
+Теперь займёмся приближающими свойствами операторов $ -rR_r(L_2) $ в пространстве $ C^l[0,1] $.
+
+Пусть сначала $ u(x) \in C^{l-1}[0,1] $. Рассмотрим операторы
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^kR_r(L_2)u \equiv (R_r(L_2)u)_x^{(k)}, k = 1,...,l, D^1 \equiv D (Du = u').
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.3}
+\label{lemma2.3}
+\textit{Операторы $ D^kR_r(L_2) $ имеют вид:}
+\begin{equation}
+\begin{array}{c}
+
+D^kR_r(L_2)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) + ... + \\
++ (-1)^{k-1}r^{k-1}u(x) + (-1)^kr^k\int\limits_x^1 e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Для $ k = 1 $ имеем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+DR_r(L_2)u = (R_r(L_2)u)_x' = \biggl( -\int\limits_x^1 e^(r(x-t))u(t)dt \biggr)_x' = u(x) - r\int\limits_x^1 e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Применяем метод математической индукции, как и в доказательстве леммы 1.3~\eqref{lemma1.3}. Все выкладки повторяются с заменой интеграла $ \int\limits_0^x $ на интеграл $ \int\limits_x^1 $, а экспоненты $ e^{-r(x-t)} $ на экспоненту $ e^{r(x-t)} $. В результате получаем формулу (2.8).
+
+\section{Лемма 2.4}
+\label{lemma2.4}
+\textit{Если $ u(x) \in C^l[0,1] $, то имеет место сходимость:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert -rD^kR(L_2)u - u^{(k)}(x) \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,...,l.
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Пусть $ k = 1 $. По лемме 2.3~\eqref{lemma2.3} имеем:
+\begin{equation}
+\begin{array}{c}
+
+DR_r(L_2)u = u(x) - r\int_x^1 e^{e(x-t)}u(t)dt.
 
 \end{array}
 \end{equation}
