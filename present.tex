@@ -1,0 +1,256 @@
+\input{gost.tex} 
+
+\renewcommand{\rmdefault}{cmr} % Шрифт с засечками
+\renewcommand{\sfdefault}{cmss} % Шрифт без засечек
+\renewcommand{\ttdefault}{cmtt} % Моноширинный шрифт
+
+\begin{document}
+
+\section{Лемма 1.1}
+\label{lemma1.1}
+
+\textit{Для $ y(x) = R_\lambda(L_1)u$ имеет место формула:}
+
+\begin{equation}
+\begin{array}{c}
+
+y(x) \equiv R_\lambda(L_1)u = \int\limits_0^x e^{\lambda(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 1.2}
+\label{lemma1.2}
+
+\textit{Для любой функции $ u(x) \in C[0,1] $ имеет место сходимость:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert rR_{-r}(L_1)u-u \Vert _{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty,
+
+\end{array}
+\end{equation}
+
+\textit{ $ \varepsilon $ - произвольное малое положительное число.}
+
+\section{Лемма 1.3}
+\label{lemma1.3}
+
+\textit{Операторы $ D^kR_{-r}(L_1) $ имеют вид:}
+
+\begin{equation}
+\begin{array}{c}
+
+D^kR_{-r}(L_1)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) - ... + \\
++ (-1)^{k-1}r^{k-1}u(x) + (-1)^kr^k\int\limits_0^x e^{-r(x-t)}u(t)dt, k = 1,...,l.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 1.4}
+\label{lemma1.4}
+
+\textit{Если $ u(x) \in C^l[0,1] $, то имеет место сходимость:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert rD^k R_{-r}(L_1)u -u^{(k)}(x) \Vert_{C[\varepsilon ,1} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,...,l.
+
+\end{array}
+\end{equation}
+
+\textit{ $ \varepsilon $ - произвольное малое положительное число.}
+
+\section{Лемма 1.5}
+\label{lemma1.5}
+
+\textit{Операторы $ (rR_{-r}(L_1))^k $ имеют вид:}
+
+\begin{equation}
+\begin{array}{c}
+
+(rR_{-r}(L_1))^ku = r^k\int\limits_0^x \dfrac{(x-t)^{k-1}}{(k-1)!}e^{-r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 1.6}
+\label{lemma1.6}
+
+\textit{Если $ u \in C^1[0,1] $, то операторы $ \Omega_{1r}^k $ имеют представление:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{1r}^ku = -\dfrac{r^{k-1}x^{k-1}e^{-rx}}{(k-1)!}u(0) + \Omega_{1r}^{k-1}u - \dfrac{1}{r}\Omega_{1r}^ku',
+
+\end{array}
+\end{equation}
+
+\textit{где $ k \geq 2 $.}
+
+\section{Лемма 1.7}
+\label{lemma1.7}
+
+\textit{Для $ u(x) \in C[0,1] $ справедливы соотношения:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{1r}^ku - u \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty , k = 1,2,...
+
+\end{array}
+\end{equation}
+
+\section{Лемма 1.8}
+\label{lemma1.8}
+
+\textit{Операторы $ D^m\Omega_{1r}^ku $ при $ k \geq 1, m = 0,...,k-1 $ имеют вид}
+
+\begin{equation}
+\begin{array}{c}
+
+D^m\Omega_{1r}^ku = r^k\int\limits_0^x K_{1m}(x,t,k,r)u(t)dt,
+
+\end{array}
+\end{equation}
+
+\textit{где}
+
+\begin{equation}
+\begin{array}{c}
+
+K_{1m}(x,t,k,r) = (-1)^me^{-r(x-t)} \biggl[r^m\dfrac{(x-t)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(x-t)^{k-2}}{(k-2)!} + \\ + C_m^2r^{m-2}\dfrac{(x-t)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(x-t)^{k-m}}{(k-m)!} + \\ 
++ (-1)^m\dfrac{(x-t)^{k-m-1}}{(k-m-1)!}\biggr].
+
+\end{array}
+\end{equation}
+
+\section{Лемма 1.9}
+\label{lemma1.9}
+\textit{При $ k \geq 2, m=1,...,k-1 $ для любой функции $ u(x) \in C^{k-1}[0,1] $ справедливы соотношения:}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m\Omega_{1r}^ku - u^{(m)} \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty,
+
+\end{array}
+\end{equation}
+\textit{Где $ D^m\Omega_{1r}^ku $ определены в Лемме 1.8.}
+
+\section{Лемма 2.1}
+\label{lemma2.1} 
+\textit{Для $ y(x) = R_\lambda(L_2) $ имеет место формула:}
+\begin{equation}
+\begin{array}{c}
+
+y(x) \equiv R_\lambda(L_2)u = -\int\limits_x^1 e^{\lambda (x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.2}
+\label{lemma2.2}
+\textit{Для любой непрерывной функции $ u(x) $ имеет место сходимость:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert -rR_r(L_2)u - u \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty
+
+\end{array}
+\end{equation}
+\textit{где $ \varepsilon $ - любое малое положительное число.}
+
+\section{Лемма 2.3}
+\label{lemma2.3}
+\textit{Операторы $ D^kR_r(L_2) $ имеют вид:}
+\begin{equation}
+\begin{array}{c}
+
+D^kR_r(L_2)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) + ... + \\
++ (-1)^{k-1}r^{k-1}u(x) + (-1)^kr^k\int\limits_x^1 e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.4}
+\label{lemma2.4}
+\textit{Если $ u(x) \in C^l[0,1] $, то имеет место сходимость:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert -rD^kR(L_2)u - u^{(k)}(x) \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,...,l.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.5}
+\label{lemma2.5}
+\textit{операторы $ \Omega_{2r}^k $ имеют вид:}
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{2r}^ku = r^k\int\limits_x^1 \dfrac{(t-x)^{k-1}}{(k-1)!}e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.6}
+\label{lemma2.6}
+\textit{Если $ u(x) \in C^1[0,1] $, то операторы $ \Omega_{2r}^k $ имеют представление:}
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{2r}^ku = -\dfrac{r^{k-1}(1-x)^{k-1}e^{-r(1-x)}}{(k-1)!}u(1) + \Omega_{2r}^{k-1}u + \dfrac{1}{r}\Omega_{2r}^ku'.
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.7}
+\label{lemma2.7}
+
+\textit{Для $ u(x) \ in C[0,1] $ справедливы соотношения:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{2r}^ku - u \Vert_{C[0,1\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,2,...
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.8}
+\label{lemma2.8}
+
+\textit{Операторы  имеют вид}
+\begin{equation}
+\begin{array}{c}
+
+D^m\Omega_{2r}^ku = r^k\int\limits_x^1 K_{2m}(x,t,k,r)u(t)dt,
+
+\end{array}
+\end{equation}
+\textit{где}
+\begin{equation}
+\begin{array}{c}
+
+K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(t-x)^{k-2}}{(k-2)!} + C_m^2r^{m-2}\dfrac{(t-x)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(t-x)^{k-m}}{(k-m)!} + (-1)^m\dfrac{(t-x)^{k-m-1}}{(k-m-1)!}\biggr].
+
+\end{array}
+\end{equation}
+
+\section{Лемма 2.9}
+\label{lemma2.9}
+
+\textit{При $ k \geq 2, m = 1,...,k-1 $ для любой функции $ u(x) \in C^{k-1}[0,1] $ справедливы соотношения:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m\Omega_{2r}^ku - u^{(m)} \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty .
+
+\end{array}
+\end{equation}
+
+\end{document}
