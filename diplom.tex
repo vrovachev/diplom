@@ -1046,4 +1046,245 @@ DR_r(L_2)u = u(x) - r\int_x^1 e^{e(x-t)}u(t)dt.
 
 \end{array}
 \end{equation}
+
+Далее
+\begin{equation}
+\begin{array}{c}
+
+\int\limits_x^1 e^{r(x-t)}u(t)dt = e^{rx}\int\limits_x^1 e^{-rx}u(t)dt = -\dfrac{1}{r}e^{rx}(e^{-rx}u(t))\bigg|_x^1 + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}u'(t)dt = \\ = \dfrac{1}{r}u(x) - \dfrac{1}{r}e^{-r(1-x)}u(1) + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}u'(t)dt.
+
+\end{array}
+\end{equation}
+
+Подставляя (2.11) в (2.10), получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+DR_r(L_2)u = e^{-r(1-x)}u(1) - \int\limits_x^1 e^{r(x-t)}u'(t)dt,
+
+\end{array}
+\end{equation}
+или
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+DR_r(L_2)u = R_r(L_2)u' + e^{-r(1-x)}u(1).
+
+\end{array}
+\end{equation}
+
+Повторяем рассуждения, рпиведённые в лемме 1.4~\eqref{lemma1.4} с заменой $ R_{-r}(L_1) $ на $ R_r(L_2) $, $ e^{-rx} $ на $ e^{-r(1-x)} $, интеграла $ \int\limits_0^x $ на интеграл $ \int\limits_x^1 $.
+
+Тогда приходим к формуле:
+\begin{equation}
+\begin{array}{c}
+
+D^kR_r(L_2)u = R_r(L_2)u^{(k)} + e^{-r(1-x)}u^{(k-1)}(1) - re^{r(1-x)}u^{(k-2)}(1) + ... + \\ + (-1)^{k-1}r^{k-1}e^{-r(1-x)}u(1).
+
+\end{array}
+\end{equation}
+
+Из формулы (2.12) получаем оценку:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert -rD^kR_r(L_2)u - u^{(k)} \Vert_{C[0,1-\varepsilon]} \leq \Vert -rR_r(L_2)u^{(k)} - u^{(k)} \Vert_{C[0,1-\varepsilon]} + \\ + e^{-r\varepsilon}\sum\limits_{j=0}^{k-1} r^j\vert u^{k-j-1}(1)\vert ,
+
+\end{array}
+\end{equation}
+и тогда сходимость (2.9) вытекает из леммы 2.2~\eqref{lemma2.2}.
+
+\textbf{Замечание.} \textit{Если в лемме 2.2~\eqref{lemma2.2} $ u(1) = 0 $, то сходимость (2.5) будет выполняться при $ \varepsilon = 0 $, т.е. на всём отрезке $ [0,1] $. Если в лемме 2.4~\eqref{lemma2.4} $ u^{(m)}(1) = 0, m = 0,1,...,k $, то сходимость (2.9) будет выполняться также при $ \varepsilon = 0 $.}
+
+Обозначим $ -rR_r(L_2) = \Omega_{2r} $ и рассмотрим свойства степеней $ \Omega_{2r}^k $.
+
+\section{Лемма 2.5}
+\label{lemma2.5}
+\textit{операторы $ \Omega_{2r}^k $ имеют вид:}
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{2r}^ku = r^k\int\limits_x^1 \dfrac{(t-x)^{k-1}}{(k-1)!}e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+\textbf{Доказательство.} Для $ k = 2 $ имеем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{2r}^2u = r^2\int\limits_x^1 e^{r(x-t)}dt\int\limits_t^1 e^{r(t-\tau)}u(\tau)d\tau = r^2e^{rx} \int\limits_x^1 dt \int\limits_x^1 \varepsilon (\tau ,t)e^{-r\tau}u(\tau)d\tau ,
+
+\end{array}
+\end{equation}
+где $ \varepsilon (\tau ,t) = 1 $ при $ t \leq \tau $ и $ \varepsilon (\tau ,t) = 0 $ при $ t \geq \tau $.
+
+Меняем порядок интегрирования:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{2r}^2u = r^2e^{rx} \int\limits_x^1 e^{-r\tau}u(\tau)d\tau \int\limits_x^1 \varepsilon (\tau ,t) dt = r^2e^{rx} \int\limits_x^1 e^{-r\tau}u(\tau)d\tau \biggl[ \int\limits_x^{\tau} \varepsilon (\tau ,t)dt + \\ + \int\limits_{\tau}^1 \varepsilon (\tau ,t)dt \biggr] = r^2e^{rx} \int\limits_x^1 e^{-r\tau}u(\tau)d\tau \int\limits_x^{\tau}dt = r^2 \int\limits_x^1(\tau - x)e^{r(x-\tau)}u(\tau)d\tau .
+
+\end{array}
+\end{equation}
+Меняем обозначение $ \tau $ на $ t $ , получаем:
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{2r}^2u = r^2\int\limits_x^1 (t-x)e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Повторяем рассуждения, приведённые в доказательстве леммы 1.5~\eqref{lemma1.5}, приходим к утверждению леммы 2.5~\eqref{lemma2.5}.
+
+\section{Лемма 2.6}
+\label{lemma2.6}
+\textit{Если $ u(x) \in C^1[0,1] $, то операторы $ \Omega_{2r}^k $ имеют представление:}
+\begin{equation}
+\begin{array}{c}
+
+\Omega_{2r}^ku = -\dfrac{r^{k-1}(1-x)^{k-1}e^{-r(1-x)}}{(k-1)!}u(1) + \Omega_{2r}^{k-1}u + \dfrac{1}{r}\Omega_{2r}^ku'.
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Пусть $ k = 2 $. Тогда из (2.13) получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{2r}^2u = r^2\int\limits_x^1 (t-x)e^{r(x-t)}u(t)dt.
+
+\end{array}
+\end{equation}
+
+Интегрируем по частям, получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Omega_{2r}^2u = r^2\biggl\lbrace -\dfrac{1}{r}[(t-x)e^{r(x-t)}u(t)]_x^1 + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}[(t-x)u(t)]_t'dt\biggr\rbrace = \\ = -r(1-x)e^{-r(1-x)}u(1) + r\int\limits_x^1 e^{r(x-t)}[u(t) + (t-x)u'(t)]_t'dt = \\ = -r(1-x)e^{-r(1-x)}u(1) + r \int\limits_x^1 e^{r(x-t)}u(t)dt + r \int\limits_x^1 (t-x)e^{r(x-t)}u'(t)dt = -r(1-x)e^{-r(1-x)}u(1) + \Omega_{2r}u + \dfrac{1}{r}\Omega_{2r}u'.
+
+\end{array}
+\end{equation}
+
+Применяем метод математической индукции, как и в лемме 1.6~\eqref{lemma1.6}, приходим к утверждению леммы 2.6~\eqref{lemma2.6}.
+
+\section{Лемма 2.7}
+\label{lemma2.7}
+
+\textit{Для $ u(x) \ in C[0,1] $ справедливы соотношения:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{2r}^ku - u \Vert_{C[0,1\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,2,...
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Для $ k = 1 $ соотношение (2.15) доказано в лемме 2.2~\eqref{lemma2.2}. Пусть $ k \geq 2 $, а $ u(x) \in C^k[0,1] $. Обозначим $ \widetilde\varphi_l(r,x) = - \dfrac{r^l(1-x)^le^{-r(1-x)}}{l!} $.
+
+Из (2.15) имеем:
+
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_{2r}^ku - u \Vert_{C[0,1\varepsilon]} \leq \Vert \widetilde\varphi_{k-1}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \Vert \Omega_{2r}^{k-1}u - u \Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^ku'\biggr\Vert_{C[0,1-\varepsilon]} \leq \widetilde\varphi_{k-1}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \widetilde\varphi_{k-2}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + ... + \widetilde\varphi_1(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \Vert \Omega_{2r}u - u \Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^ku'\biggr\Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^{k-1}u'\biggr\Vert_{C[0,1-\varepsilon]} + ... + \biggl\Vert \dfrac{1}{r}\Omega_{1r}^2u'\biggr\Vert_{C[0,1-\varepsilon]}.
+
+\end{array}
+\end{equation}
+
+Далее, по аналогии с доказательством леммы 1.7~\eqref{lemma1.7}, имеем: $ \widetilde\varphi_l(r,x) \leq r^le^{-r\varepsilon} $ на отрезке $ [0,1-\varepsilon] $, по лемме 2.2~\eqref{lemma2.2} $ \Vert \Omega_{2r}u - u \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ при $ r \rightarrow \infty $ для любой $ u \in C[0,1] $. Осталось позазать, что $ \biggl\Vert \dfrac{1}{r}\Omega_2^lu' \biggr\Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ при $ r \rightarrow \infty $ для $ l = 2,...,k $.
+
+Пользуемся для этого формулой (2.14), применяя её к производным от функции $ u $.
+
+Получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\dfrac{1}{r}\Omega_{2r}^lu' = \dfrac{1}{r} \widetilde\varphi_{l-1}(r,x)u'(1) + \dfrac{1}{r}\Omega_{2r}^{l-1}u' - \dfrac{1}{r^2}\Omega_{2r}^2u'',
+
+\end{array}
+\end{equation}
+\begin{equation}
+\begin{array}{c}
+
+\dfrac{1}{r}\Omega_{2r}^{l-1}u' = r^{l-2}\int\limits_x^1 e^{r(x-t)}\dfrac{(t-x)^{l-2}}{(l-2)!}u'(t)dt,
+
+\end{array}
+\end{equation}
+\begin{equation}
+\begin{array}{c}
+
+\dfrac{1}{r}\Omega_{2r}^lu'' = r^{l-2}\int\limits_x^1 e^{r(x-t)}\dfrac{(t-x)^{l-1}}{(l-1)!}u''(t)dt,
+
+\end{array}
+\end{equation}
+
+Затем берём интегралы в правых частях (2.16)-(2.17) по частям $ l - 2 $ раза, каждый раз "перебрасывая" производную на функцию $ u'(t) $ в (2.16) и функцию $ u''(t) $ в (2.17) до тех пор, пока не исчезнут степени $ r $ перед интегралами.
+
+Тогда в (2.16) мы придём к интегралу $ \int\limits_x^1 e^{r(x-t)}u^{(l-1)}(t)dt $, а в (2.17) - к интегралу $ \int\limits_x^1 e^{r(x-t)}u^{(l)}(t)dt $.
+
+Эти интегралы, а также подстановки, полученные при интегрировании по частям, будут иметь те же оценки, что и аналогичные им интегралы и подстановки в доказательстве леммы 1.7~\eqref{lemma1.7}.
+
+Отсюда получаем сходимость (2.15) для любой функции $ u \in C^k[0,1] $.
+
+Далее доказываем ограниченность норм $ \Vert \Omega_{2r}^ku \Vert_{C[0,1] \rightarrow C[0,1-\varepsilon]} $:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_{2r}^ku \Vert_{C[0,1] \rightarrow C[0,1-\varepsilon]} = \Vert \Omega_{2r}(\Omega_{2r}^{k-1}u) \Vert_{C[0,1-\varepsilon]} = \Vert \Omega_{2r}\Omega_{2r}...(\Omega_{2r}u)\Vert_{C[0,1-\varepsilon]} \leq \Vert u \Vert_{C[0,1]}
+
+\end{array}
+\end{equation}
+
+Наконец, пользуемся теоремой Банаха-Штейнгауза и приходим к утверждению леммы 2.7~\eqref{lemma2.7}.
+
+Рассмотрим теперь операторы $ D^m\Omega_{2r}^ku = \dfrac{d^m}{dx^m}\Omega_{2r}^ku, D' = D $.
+
+\section{Лемма 2.8}
+\label{lemma2.8}
+
+\textit{Операторы  имеют вид}
+\begin{equation}
+\begin{array}{c}
+
+D^m\Omega_{2r}^ku = r^k\int\limits_x^1 K_{2m}(x,t,k,r)u(t)dt,
+
+\end{array}
+\end{equation}
+\textit{где}
+\begin{equation}
+\begin{array}{c}
+
+K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(t-x)^{k-2}}{(k-2)!} + C_m^2r^{m-2}\dfrac{(t-x)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(t-x)^{k-m}}{(k-m)!} + (-1)^m\dfrac{(t-x)^{k-m-1}}{(k-m-1)!}\biggr].
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Рассуждаем по аналогии с доказательством леммы 1.8. обозначим  , записываем представление (2.13) из леммы 2.5 в виде:
+
+учитываем, что в выражении для  при  будут присутствовать степени , и тогда будет справедливо выражение:
+
+Осталось найти конкретное выражение для
+
+Обозначим
+
+Учтём, что .
+
+Тогда получим:
+
+Сравнивая полученные выражения с соответствующими выражениями в лемме 1.8, видим, что они отличаются заменой  на ,  на , а также заменой знака на противоположный при вычислении  при - нечётном.
+
+С учётом этого повторяем дословно дальнейшие рассуждения в доказательстве леммы 1.8 и приходим к утверждению леммы 2.8.
+
 \end{document}
