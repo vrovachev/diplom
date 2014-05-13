@@ -8,7 +8,7 @@
 
 \begin{document}
 
-%\includepdf[pages={1}]{titulDiplom.pdf}
+\includepdf[pages={1}]{titulDiplom.pdf}
 
 \tableofcontents
 
@@ -1271,20 +1271,110 @@ K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\d
 \end{array}
 \end{equation}
 
-\textbf{Доказательство.} Рассуждаем по аналогии с доказательством леммы 1.8. обозначим  , записываем представление (2.13) из леммы 2.5 в виде:
+\textbf{Доказательство.} Рассуждаем по аналогии с доказательством леммы 1.8~\eqref{lemma1.8}. обозначим $ K_{20}(x,t,k,r) = e^{r(x-t)}\dfrac{(t-x)^{k-1}}{(k-1)!} $, записываем представление (2.13) из леммы 2.5~\eqref{lemma2.5} в виде:
+\begin{equation}
+\begin{array}{c}
+\nonumber
 
-учитываем, что в выражении для  при  будут присутствовать степени , и тогда будет справедливо выражение:
+\Omega_{2r}^ku = r^k\int\limits_x^1 K_{20}(x,t,k,r)u(t)dt,
 
-Осталось найти конкретное выражение для
+\end{array}
+\end{equation}
+учитываем, что в выражении для $ D^jK_{20}(x,t,k,r) $ при $ j=1,...,k-2 $ будут присутствовать степени $ t-x $, и тогда будет справедливо выражение:
+\begin{equation}
+\begin{array}{c}
+
+D^m\Omega_{2r}^ku = r^k\int\limits_x^1 D^mK_{20}(x,t,k,r)dt = r^k\int\limits_x^1 D^m\biggl[\dfrac{(t-x)^{k-1}}{(k-1)!}e^{r(x-t)}\biggr]u(t)dt.
+
+\end{array}
+\end{equation}
+
+Осталось найти конкретное выражение для $ D^mK_{20}(x,t,k,r) $.
 
 Обозначим
+\begin{equation}
+\begin{array}{c}
+\nonumber
 
-Учтём, что .
+\widetilde\varphi_l(x,t) = \dfrac{(t-x)^l}{l!}.
+
+\end{array}
+\end{equation}
+Учтём, что $ D\widetilde\varphi_l(x,t) = -D\widetilde\varphi_{k-2}(x,t) $.
 
 Тогда получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
 
-Сравнивая полученные выражения с соответствующими выражениями в лемме 1.8, видим, что они отличаются заменой  на ,  на , а также заменой знака на противоположный при вычислении  при - нечётном.
+DK_{20}(x,t,k,r) = e^{r(x-t)}[-r\widetilde\varphi_{k-1}(x,t) - \widetilde\varphi_{k-2}(x,t)], \\
+D^2K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^2\widetilde\varphi_{k-1}(x,t)-r\widetilde\varphi_{k-2}(x,t) + D[r\widetilde\varphi_{k-1}(x,t) - \widetilde\varphi_{k-2}(x,t)]\rbrace = e^{r(x-t)}\lbrace r^2\widetilde\varphi_{k-1}(x,t)-r\widetilde\varphi_{k-2}(x,t) - r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)\rbrace = e^{r(x-t)}[r^2\widetilde\varphi_{k-1}(x,t) - 2r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)], \\
+D^3K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\widetilde\varphi_{k-2}(x,t) + r\widetilde\varphi_{k-3}(x,t) + D[r^2\widetilde\varphi_{k-1}(x,t) - 2r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)]\rbrace = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\widetilde\varphi_{k-2}(x,t) + r\widetilde\varphi_{k-3}(x,t) - r^2\widetilde\varphi_{k-2}(x,t) + 2r\widetilde\varphi_{k-3}(x,t) - \widetilde\varphi_{k-4}(x,t)\rbrace = e^{r(x-t)}[r^3\widetilde\varphi_{k-1}(x,t) - 3r^2\widetilde\varphi_{k-2}(x,t) + 3r\widetilde\varphi_{k-3}(x,t) - \widetilde\varphi_{k-4}(x,t)].
 
-С учётом этого повторяем дословно дальнейшие рассуждения в доказательстве леммы 1.8 и приходим к утверждению леммы 2.8.
+\end{array}
+\end{equation}
+
+Сравнивая полученные выражения с соответствующими выражениями в лемме 1.8~\eqref{lemma1.8}, видим, что они отличаются заменой $ e^{-r(x-t)} $ на $ e^{r(x-t)} $, $ \varphi_l(x,t) $ на $ \widetilde\varphi_l(x,t) $, а также заменой знака на противоположный при вычислении $ D^lK_{20}(x,t,k,r) $ при $ l $ - нечётном.
+
+С учётом этого повторяем дословно дальнейшие рассуждения в доказательстве леммы 1.8~\eqref{lemma1.8} и приходим к утверждению леммы 2.8~\eqref{lemma2.8}.
+
+\section{Лемма 2.9}
+\label{lemma2.9}
+
+\textit{При $ k \geq 2, m = 1,...,k-1 $ для любой функции $ u(x) \in C^{k-1}[0,1] $ справедливы соотношения:}
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m\Omega_{2r}^ku - u^{(m)} \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty .
+
+\end{array}
+\end{equation}
+
+\textbf{Доказательство.} Пусть $ k = 2 $. Тогда в соответствии с (2.20), интегрируя по частям, получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D\Omega_{2r}^2u = r^2 \int\limits_x^1 \dfrac{d}{dx}[e^{r(x-t)}(t-x)]u(t)dt = -r^2\int\limits_x^1 \dfrac{d}{dt}[e^{r(x-t)}(x-t)](u(t)dt = -r^2[[e^{r(x-t)}(x-t)(u(t)]_x^1 + r^2\int\limits_x^1 e^{r(x-t)}(t-x)u'(t)dt = -r^2[[e^{-r(1-x)}(1-x)(u(1) + r^2\int\limits_x^1 e^{r(x-t)}(t-x)u'(t)dt.
+
+\end{array}
+\end{equation}
+
+Отсюда получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+\Vert D\Omega_{2r}^2u - u' \Vert_{C[0,1-\varepsilon]} \leq r^2e^{-r\varepsilon}\vert u(1) \vert + \Vert \Omega_{2r}^2u' - u' \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ при $ r \rightarrow \infty
+\end{array}
+\end{equation}
+по лемме 2.7~\eqref{lemma2.7}.
+
+Дальше повторяем рассуждения, приведённые в доказательсте леммы 1.9~\eqref{lemma1.9} с заменой $ x - t $ на $ t - x $, $ e^{-r(x-t)} $ на $ e^{r(x-t)} $, степеней $ x $ в подстановках - на степени $ 1 - x $ и отрезок $ [\varepsilon ,1] $ - на отрезок $ [0,1-\varepsilon] $.
+
+Тогда придём к следующему:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+D^m\Omega_{2r}^kk = r^k \int_x^1 D^m K_{20}(x,t,k,r)u(t)dt, \\
+\int_x^1 D^mK_{20}(x,t,k,r)u(t)dt = \int\limits_x^1 D(D^{m-1}K_{20}(x,t,k,r))u(t)dt = \\
+= - \int\limits_x^1 \dfrac{d}{dt}(D^{m-1}K_{20}(x,t,k,r))u(t)dt = - [D^{m-1}K_{20}(x,t,k,r)]_x^1 + \int\limits_x^1 D^{m-1}K_{20}(x,t,k,r)u'(t)dt = -[D^{m-1}K_{20}(x,t,k,r)]_{t=1}u(1) + \int\limits_x^1 D^{m-1}K_{20}(x,t,k,r)u'(t)dt = \\
+= -[D^{m-1}K_{20}(x,t,k,r)]_{t=1}u(1) - [D^{m-2}K_{20}(x,t,k,r)]_{t=1}u'(1) - [D^2K_{20}(x,t,k,r)]_{t=1}u^{(m-3)}(1) - [DK_{20}(x,t,k,r)]_{t=1}u^{(m-2)}(1) - K_{20}(x,t,k,r)u^{(m-1)}(1) + \int\limits_x^1 K_{20}(x,t,k,r)u^{(m)}(t)dt.
+
+\end{array}
+\end{equation}
+
+Так же как для операторов $ D^m\Omega_{1r}^k $ все подстановки на отрезке $ [0,1-\varepsilon] $ будут иметь оценку $ O(r^{m-1}e^{-r\varepsilon}) $.
+
+Отсюда приходим к равенству:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D^m\Omega_{2r}^ku - u^{(m)} \Vert_{C[0,1-\varepsilon]} = \Vert \Omega_{2r}^ku^{(m)} - u^{(m)} \Vert_{C[0,1-\varepsilon]} + O(r^{k+m-1}e^{-r\varepsilon}),
+
+\end{array}
+\end{equation}
+откуда следует утверждение леммы 2.9~\eqref{lemma2.9}.
 
 \end{document}
