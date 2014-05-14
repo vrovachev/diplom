@@ -1,180 +1,314 @@
-\input{gost.tex} 
+% \documentclass[9pt,utf8,handout,notheorems]{beamer}
+\documentclass[10pt,utf8,presentation,notheorems]{beamer}
 
-\renewcommand{\rmdefault}{cmr} % Шрифт с засечками
-\renewcommand{\sfdefault}{cmss} % Шрифт без засечек
-\renewcommand{\ttdefault}{cmtt} % Моноширинный шрифт
+% \usepackage{lmodern}
+% \usepackage{mathptmx}
+% \usepackage{helvet}
+
+% \usepackage{pscyr}
+
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{xtab}
+\usepackage{moreverb}
+\usepackage{listings}
+
+\def\refer{\color{-red!50}}
+\def\remark{\color{-green!10}}
+\def\defin{\color{magenta}}
+\def\comment{\color{violet}}
+
+\mode<presentation> {
+%   \usetheme{default}
+  \usetheme{Boadilla}
+
+  \usecolortheme{default}
+%   \usecolortheme{crane}
+%   \usecolortheme{wolverine}
+
+%   \usefonttheme{serif}
+%   \usefonttheme{structurebold}
+%   \usefonttheme{structureitalicserif}
+  \setbeamercovered{transparent}
+  \setbeamercolor{title}{fg=red!90!black,bg=red!10!white}
+}
+
+% % for print
+% \mode<handout> {
+%   \hoffset 30pt
+%   \voffset 0pt
+%   \usecolortheme{dove}
+%   \usepackage{pgfpages}
+%   \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%   \pagestyle{plain}
+% }
+
+\usepackage{graphicx}
+\graphicspath{{fig/}}
+
+\usepackage{xtab}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+
+
+%        Курсивные окружения
+\theoremstyle{plain}
+\newtheorem{theorem}{\hspace*{6mm}Теорема}[section]
+\newtheorem{lemma}{\hspace*{6mm}Лемма}[section]
+\newtheorem{corollary}{\hspace*{6mm}Следствие}[section]
+% Теорема 1.1, лемма 1.1 и т.п.
+
+%        Ненумерованные окружения
+\newtheorem*{theoremnn}{Теорема}
+% Просто теорема (без номера)
+
+%        Окружения с прямым шрифтом
+\theoremstyle{definition}
+\newtheorem{definition}{\hspace*{6mm}Определение}[section]
+
+\renewenvironment{proof}
+{\textbf{Доказательство. }}{\hfill$\Box$}
+
+\renewcommand{\Re}{\mathrm{Re}\,}
+\renewcommand{\Im}{\mathrm{Im}\,}
+
+\title[Решение задачи восстановления функции]{
+Решение задачи восстановления функции \\ вместе с её производными с помощью операторов $ \Omega_r $
+}
+
+\author[Ровачев В.А.]{
+  Ровачев Вадим Алексеевич
+}
+\institute[010501] {
+Специальность 010501 \\
+«Прикладная математика и информатика»\\
+
+\hfill
+
+Научный руководитель: Хромов А.А.
+}
+
+\date{Саратов 2014}
 
 \begin{document}
-\chapter{Приближающие свойства резольвенты оператора \\ $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
 
-\section{Лемма 1.1}
+\begin{frame}
+\titlepage
+
+\end{frame}
+
+\section<presentation>*{Содержание}
+
+\begin{frame}
+\frametitle{Содержание}
+\begin{itemize}
+\item 1. Постановка задачи
+\item 2. Приближающие свойства резольвенты оператора \\ $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.
+\item 3. Приближающие свойства резольвенты оператора \\ $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.
+\item 4. Восстановление функции вместе с её производными
+\item 5. Заключение
+\item 6. Список литературы
+\end{itemize}
+\end{frame}
+
+\section{Постановка задачи}
+
+\begin{frame}
+\frametitle{Постановка задачи}
+\begin{itemize}
+\item Постановка задачи восстановления функции.
+
+Пусть $ u(x) \in C^m[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $, т.е. $ \Vert f_\delta -u \Vert_{L_2[0,1]} \leq \delta $. Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u(x) $.
+Строится приближение с помощью оператора $ \Omega_r $
+
+\item Постановка задачи восстановления производной функции.
+
+Пусть $ u(x) \in C^{k-1}[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $.
+Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u^{(m)}(x), 0 \leq m \leq k-1 $.
+Строится приближение с помощью оператора $ D^m\Omega_r^{(k)} $
+\end{itemize}
+\end{frame}
+
+\section{Приближающие свойства резольвенты оператора $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
+
+\begin{frame}
+\frametitle{Формула резольвенты дифференциального оператора первого порядка}
+Рассмотрим простейший дифференциальный оператор первого порядка $ L_1:y^{'}, y(0)=0 $. Обозначим через $ R_\lambda(L_1) $ его резольвенту, т.е. оператор $ R_\lambda(L_1)=(L_1-\lambda E)^{-1} $, где $ E $ - единичный оператор, $ \lambda $ - спектральный параметр (числовой параметр,  вообще говоря, комплексный). Найдем формулу для резольвенты.
+
 \label{lemma1.1}
+\textbf{Лемма 1.1. Формула резольвенты дифференциального оператора первого порядка}
 
 \textit{Для $ y(x) = R_\lambda(L_1)u$ имеет место формула:}
-
 \begin{equation}
 \begin{array}{c}
-
 y(x) \equiv R_\lambda(L_1)u = \int\limits_0^x e^{\lambda(x-t)}u(t)dt.
-
 \end{array}
 \end{equation}
-
-Положим в (1.1) $ \lambda \ -r $, где $ r > 0 $, и рассмотрим операторы $ rR_{-r}(L_1)$. Очевидно, эти операторы имеют вид:
-
+Положим в (7) $ \lambda = -r $, где $ r > 0 $, и рассмотрим операторы $ rR_{-r}(L_1)$. Эти операторы имеют вид:
 \begin{equation}
 \begin{array}{c}
-
-rR_{-r}(L_1)u = r \int\limits_0^x e^{-r(x-t)}u(t)dt
-
+\Omega_{1r}u = rR_{-r}(L_1)u = r \int\limits_0^x e^{-r(x-t)}u(t)dt
 \end{array}
 \end{equation}
+\end{frame}
 
-\section{Лемма 1.3}
+\begin{frame}
+\frametitle{Формула резольвенты в пространствах гладких функций $ C^l[0,1] $ и формула степеней резольвенты}
+Рассмотрим операторы $ D^kR_{-r}(L_1) \equiv (R_{-r}(L_1)u)_x^{(k)} k = 1,...,l, D^1 \equiv D (Du = u')$.
+
 \label{lemma1.3}
+\textbf{Лемма 1.3. Формула резольвенты в пространствах гладких функций}
 
 \textit{Операторы $ D^kR_{-r}(L_1) $ имеют вид:}
-
 \begin{equation}
 \begin{array}{c}
-
 D^kR_{-r}(L_1)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) - ... + \\
 + (-1)^{k-1}r^{k-1}u(x) + (-1)^kr^k\int\limits_0^x e^{-r(x-t)}u(t)dt, k = 1,...,l.
-
 \end{array}
 \end{equation}
 
-\section{Лемма 1.5}
 \label{lemma1.5}
+\textbf{Лемма 1.5. Формула степеней резольвенты}
 
 \textit{Операторы $ (rR_{-r}(L_1))^k $ имеют вид:}
-
 \begin{equation}
 \begin{array}{c}
-
 (rR_{-r}(L_1))^ku = r^k\int\limits_0^x \dfrac{(x-t)^{k-1}}{(k-1)!}e^{-r(x-t)}u(t)dt.
-
 \end{array}
 \end{equation}
+\end{frame}
 
-\section{Лемма 1.8}
+\begin{frame}
+\frametitle{Формула производной от резольвенты порядка $ m $}
+
 \label{lemma1.8}
-
+\textbf{Лемма 1.8. Формула производной от резольвенты порядка $ m $}
 
 \textit{Операторы $ D^m\Omega_{1r}^ku $ при $ k \geq 1, m = 0,...,k-1 $ имеют вид}
-
 \begin{equation}
 \begin{array}{c}
-
 D^m\Omega_{1r}^ku = r^k\int\limits_0^x K_{1m}(x,t,k,r)u(t)dt,
-
 \end{array}
 \end{equation}
-
 \textit{где}
-
 \begin{equation}
 \begin{array}{c}
-
 K_{1m}(x,t,k,r) = (-1)^me^{-r(x-t)} \biggl[r^m\dfrac{(x-t)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(x-t)^{k-2}}{(k-2)!} + \\ + C_m^2r^{m-2}\dfrac{(x-t)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(x-t)^{k-m}}{(k-m)!} + \\ 
 + (-1)^m\dfrac{(x-t)^{k-m-1}}{(k-m-1)!}\biggr].
-
 \end{array}
 \end{equation}
+\end{frame}
 
-\chapter{Приближающие свойства резольвенты оператора \\ $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.}
+\section{Приближающие свойства резольвенты оператора $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.}
 
-\section{Лемма 2.1}
-\label{lemma2.1} 
+\begin{frame}
+\frametitle{Формула резольвенты дифференциального оператора первого порядка}
+Рассмотрим оператор $ L_2: y', y(1) = 0 $, отличающийся от оператора $ L_1 $ лишь граничным условием.
+Обозначим его резольвенту $R_\lambda(L_2)$. Положим $ \lambda = r, r > 0 $ и рассмотрим оператор $ -rR_r(L_2) $.
+
+\label{lemma2.1}
+\textbf{Лемма 2.1. Формула резольвенты дифференциального оператора первого порядка}
+
 \textit{Для $ y(x) = R_\lambda(L_2) $ имеет место формула:}
 \begin{equation}
 \begin{array}{c}
-
 y(x) \equiv R_\lambda(L_2)u = -\int\limits_x^1 e^{\lambda (x-t)}u(t)dt.
-
 \end{array}
 \end{equation}
+Положим в (1.1) $ \lambda \ -r $, где $ r > 0 $, и рассмотрим операторы $ -rR_{r}(L_2)$. Очевидно, эти операторы имеют вид:
+\begin{equation}
+\begin{array}{c}
+\Omega_{2r}u = -rR_{r}(L_2)u = r \int\limits_x^1 e^{r(x-t)}u(t)dt
+\end{array}
+\end{equation}
+\end{frame}
 
-\section{Лемма 2.3}
+\begin{frame}
+\frametitle{Формула резольвенты в пространствах гладких функций $ C^l[0,1] $ и формула степеней резольвенты}
+Рассмотрим операторы $ D^kR_r(L_2)u \equiv (R_r(L_2)u)_x^{(k)}, k = 1,...,l, D^1 \equiv D (Du = u') $.
+
 \label{lemma2.3}
+\textbf{Лемма 2.3. Формула резольвенты в пространствах гладких функций}
+
 \textit{Операторы $ D^kR_r(L_2) $ имеют вид:}
 \begin{equation}
 \begin{array}{c}
-
 D^kR_r(L_2)u = u^{(k-1)}(x) - ru^{(k-2)}(x) + r^2u^{(k-3)}(x) + ... + \\
 + (-1)^{k-1}r^{k-1}u(x) + (-1)^kr^k\int\limits_x^1 e^{r(x-t)}u(t)dt.
-
 \end{array}
 \end{equation}
 
-\section{Лемма 2.5}
 \label{lemma2.5}
+\textbf{Лемма 2.5. Формула степеней резольвенты}
+
 \textit{операторы $ \Omega_{2r}^k $ имеют вид:}
 \begin{equation}
 \begin{array}{c}
-
 \Omega_{2r}^ku = r^k\int\limits_x^1 \dfrac{(t-x)^{k-1}}{(k-1)!}e^{r(x-t)}u(t)dt.
-
 \end{array}
 \end{equation}
+\end{frame}
 
-\section{Лемма 2.8}
+\begin{frame}
+\frametitle{Формула производной от резольвенты порядка $ m $}
+
 \label{lemma2.8}
+\textbf{Лемма 2.8. Формула производной от резольвенты порядка}
 
 \textit{Операторы  имеют вид}
 \begin{equation}
 \begin{array}{c}
-
 D^m\Omega_{2r}^ku = r^k\int\limits_x^1 K_{2m}(x,t,k,r)u(t)dt,
-
 \end{array}
 \end{equation}
 \textit{где}
 \begin{equation}
 \begin{array}{c}
-
-K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(t-x)^{k-2}}{(k-2)!} + C_m^2r^{m-2}\dfrac{(t-x)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(t-x)^{k-m}}{(k-m)!} + (-1)^m\dfrac{(t-x)^{k-m-1}}{(k-m-1)!}\biggr].
-
+K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(t-x)^{k-2}}{(k-2)!} + \\ + C_m^2r^{m-2}\dfrac{(t-x)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(t-x)^{k-m}}{(k-m)!} + \\ + (-1)^m\dfrac{(t-x)^{k-m-1}}{(k-m-1)!}\biggr].
 \end{array}
 \end{equation}
+\end{frame}
 
-\chapter{Восстановление функции вместе с её производными}
-\section{Приближение функции и её производных на $ [0,1] $ с помощью оператора $ \Omega_r $}
-Рассмторим оператор $ \Omega_r $, являющийся комбинацией операторов $ \Omega_{1r}, \Omega_{2r} $.
-
+\section{Восстановление функции вместе с её производными}
+\begin{frame}
+\frametitle{Приближение функции и её производных на $ [0,1] $ с помощью оператора $ \Omega_r $}
+Рассмотрим оператор $ \Omega_r $, являющийся комбинацией операторов $ \Omega_{1r}, \Omega_{2r} $ приведённых в лемме 1.1~\eqref{lemma1.1} и лемме 2.1~\eqref{lemma2.1} соответственно.
 \begin{equation}
 \begin{array}{c}
-
 \Omega_r u = \left\{
 \begin{array}{l}
-\Omega_{2r}u \equiv r\int\limits_x^1 e^{r(x-t)}u(t)dt, x \in [0,1/2], \\\\
+\Omega_{2r}u \equiv r\int\limits_x^1 e^{r(x-t)}u(t)dt, x \in [0,1/2], \\
 \Omega_{1r}u \equiv r\int\limits_0^x e^{-r(x-t)}u(t)dt, x \in [1/2,1].
 \end{array}
 \right.
-
 \end{array}
 \end{equation}
+В силу свойств операторов $ \Omega_{1r} $ и $ \Omega_{2r} $ на каждом из отрезков $ [0,1/2] $ и $ [1/2,1] $ эти операторы дают равномерную сходимость в метрике $ C[0,1/2] $ и $ C[1/2,1] $ соответственно к любой функции $ u(x) \in C[0,1] $.
+\end{frame}
 
-В силу свойств операторов $ \Omega_{1r} $ и $ \Omega_{2r} $ (леммы 1.2~\eqref{lemma1.2} и 2.2~\eqref{lemma2.2}) на каждом из отрезков $ [0,1/2] $ и $ [1/2,1] $ эти операторы дают равномерную сходимость в метрике $ C[0,1/2] $ и $ C[1/2,1] $ соответственно к любой функции $ u(x) \in C[0,1] $.
-
-Далее определим по аналогии с (3.1) в соответствии с леммами 1.5~\eqref{lemma1.5} и 2.5~\eqref{lemma2.5} оператор $ \Omega_r^{(k)} $:
+\begin{frame}
+Далее определим по аналогии с (13) в соответствии с леммами 1.5~\eqref{lemma1.5} и 2.5~\eqref{lemma2.5} оператор $ \Omega_r^{(k)} $:
 \begin{equation}
 \begin{array}{c}
-
 \Omega_r^{(k)} u = \left\{
 \begin{array}{l}
-\Omega_{2r}^ku \equiv r^k\int\limits_x^1 \dfrac{(t-x)^{k-1}}{(k-1)!} e^{r(x-t)}u(t)dt, x \in [0,1/2], \\\\
+\Omega_{2r}^ku \equiv r^k\int\limits_x^1 \dfrac{(t-x)^{k-1}}{(k-1)!} e^{r(x-t)}u(t)dt, x \in [0,1/2], \\
 \Omega_{1r}^ku \equiv r^k\int\limits_0^x \dfrac{(x-t)^{k-1}}{(k-1)!} e^{-r(x-t)}u(t)dt, x \in [1/2,1].
 \end{array}
 \right.
-
 \end{array}
 \end{equation}
 
 А также построим оператор $ D^k\Omega_r (D^k=\dfrac{d^k}{dx^k}, D' \equiv D) $:
 \begin{equation}
 \begin{array}{c}
-
 D^k\Omega_r u = \left\{
 \begin{array}{l}
 D^k\Omega_{2r}u, x \in [0,1/2], \\
@@ -182,101 +316,81 @@ D^k\Omega_{1r}u, x \in [1/2,1],
 \end{array}
 \right.
 k=1,2,...
-
 \end{array}
 \end{equation}
-где в соответствии с леммами 1.3~\eqref{lemma1.3} и 2.3~\eqref{lemma2.3} операторы $ D^k\Omega_{1r}u $ и $ D^k\Omega_{2r}u $ определены в формулах (1.9) и (2.8) соответственно.
+где в соответствии с леммами 1.3~\eqref{lemma1.3} и 2.3~\eqref{lemma2.3} операторы $ D^k\Omega_{1r}u $ и $ D^k\Omega_{2r}u $ определены в формулах (3) и (9) соответственно.
+\end{frame}
 
-Из (3.2),(3.4) и лемм 1.2~\eqref{lemma1.2},2.2~\eqref{lemma2.2},1.4~\eqref{lemma1.4} и 2.4~\eqref{lemma2.4} вытекает теорема:
-
+\begin{frame}
 \label{theorem3.1}
 \textbf{Теорема 3.1}
 \textit{Для любой функции $ u(x) \in C^l[0,1], l \geq 0 $ выполняется сходимость:}
 \begin{equation}
 \begin{array}{c}
-
 \Vert D^k\Omega_r u - u^{(k)} \Vert_{L_\infty[0,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k =0,1,...,l.
-
 \end{array}
 \end{equation}
 
 Рассмотрим операторы $ D^m\Omega_r^{(k)} $ при $ k \geq 1, m = 0,...,k-1 $:
 \begin{equation}
 \begin{array}{c}
-
 D^m\Omega_r^{(k)} u = \left\{
 \begin{array}{l}
-D^m\Omega_{2r}^ku \equiv r^k\int\limits_x^1 K_{2m}(x,t,k,r) u(t)dt, x \in [0,1/2], \\\\
+D^m\Omega_{2r}^ku \equiv r^k\int\limits_x^1 K_{2m}(x,t,k,r) u(t)dt, x \in [0,1/2], \\
 D^m\Omega_{1r}^ku \equiv r^k\int\limits_0^x K_{1m}(x,t,k,r) u(t)dt, x \in [1/2,1].
 \end{array}
 \right.
-
-
 \end{array}
 \end{equation}
 где $ K_{1m}(x,t,k,r) $, $ K_{2m}(x,t,k,r) $ определены в формулах (1.22),(2.19) в соответствии с леммами 1.8~\eqref{lemma1.8} и 2.8~\eqref{lemma2.8}.
-
-Из (3.2),(3.6) и лемм 1.7~\eqref{lemma1.7},2.7~\eqref{lemma2.7},1.9~\eqref{lemma1.9} и 2.9~\eqref{lemma2.9} вытекает теорема:
 
 \label{theorem3.2}
 \textbf{Теорема 3.2}
 \textit{Для любой функции $ u(x) \in C^{k-1}[0,1] $ при $ k \geq 1, m = 0,...,k-1 $ выполняется сходимость:}
 \begin{equation}
 \begin{array}{c}
-
 \Vert D^m\Omega_r^{(k)} u - u^{(m)} \Vert_{L_\infty[0,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty .
-
 \end{array}
 \end{equation}
+\end{frame}
 
-\section{Постановка задачи восстановления функции}
-Пусть $ u(x) \in C^m[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $, т.е. $ \Vert f_\delta -u \Vert_{L_2[0,1]} \leq \delta $. Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u(x) $.
-Строится приближение с помощью оператора $ \Omega_r $, опредённого в (3.1).
-
+\begin{frame}
+\frametitle{Задача восстановления функции}
 \label{theorem3.3}
 \textbf{Теорема 3.3}
 \textit{Для сходимости}
 \begin{equation}
 \begin{array}{c}
-
 \Delta(\delta, \Omega_r, u) \equiv \sup\limits_{f_\delta} \lbrace \Vert \Omega_r f_\delta - u \Vert_{L_\infty[0,1]}: \Vert f_\delta - u \Vert_{L_2[0,1]} \leq \delta \rbrace \rightarrow 0 $ \textit{при} $ \delta \rightarrow 0
-
 \end{array}
 \end{equation}
 \textit{необходимо и достаточно выполенение согласования:}
 \begin{equation}
 \begin{array}{c}
 \nonumber
-
 r = r(\delta), r(\delta) \rightarrow \infty, (r(\delta))^{1/2}\delta \rightarrow 0.
-
 \end{array}
 \end{equation}
+\end{frame}
 
-\section{Постановка задачи восстановления производной функции порядка $ m $}
-Пусть $ u(x) \in C^{k-1}[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $.
-Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u^{(m)}(x), 0 \leq m \leq k-1 $.
-Строится приближение с помощью оператора $ D^m\Omega_r^{(k)} $, опредённого в (3.6).
-
+\begin{frame}
+\frametitle{Задача восстановления производной функции порядка $ m $}
 \label{theorem3.4}
 \textbf{Теорема 3.4}
 \textit{Для сходимости}
 \begin{equation}
 \begin{array}{c}
-
 \Delta(\delta, D^m\Omega_r^{(k)}, u) \equiv \\ \equiv \sup\limits_{f_\delta} \lbrace \Vert D^m\Omega_r^{(k)} f_\delta - u^{(m)} \Vert_{L_\infty[0,1]}: \Vert f_\delta - u \Vert_{L_2[0,1]} \leq \delta \rbrace \rightarrow 0 $ \textit{при} $ \\
 \delta \rightarrow 0, k \geq 1, 0 \leq m \leq k-1,
-
 \end{array}
 \end{equation}
 \textit{необходимо и достаточно выполенение согласования:}
 \begin{equation}
 \begin{array}{c}
 \nonumber
-
 r = r(\delta), r(\delta) \rightarrow \infty, (r(\delta))^{\frac{2m+1}{2}}\delta \rightarrow 0.
-
 \end{array}
 \end{equation}
+\end{frame}
 
 \end{document}
