@@ -1506,6 +1506,56 @@ r = r(\delta), r(\delta) \rightarrow \infty, (r(\delta))^{1/2}\delta \rightarrow
 \end{array}
 \end{equation}
 
+\textbf{Доказательство.} По теореме 3.1~\eqref{theorem3.1} для сходимости (3.8) необходимо и достаточно:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_r u - u \Vert_{L_\infty[0,1]} \rightarrow 0, r \rightarrow \infty $ и $ \delta \Vert \Omega_r \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} \rightarrow 0, r \rightarrow \infty , \delta \rightarrow 0.
+
+\end{array}
+\end{equation}
+первое из этих условий вытекает из теоремы 3.1~\eqref{theorem3.1}.
+Для доказательства второго покажем, что $ \Vert \Omega_r \Vert_{L_2 \rightarrow L_\infty} $ ограничена при каждом фиксированном $ r $.
+
+В нашем случае имеем:
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_r u - u \Vert_{L_\infty[0,1]} = \max{\lbrace\Vert \Omega_r u - u \Vert_{C[0,1/2]},\Vert \Omega_r u - u \Vert_{C[1/2,1]}\rbrace} \\
+\Vert \Omega_r \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} = \max{\lbrace \Vert \Omega_r \Vert_{L_2[0,1] \rightarrow C[0,1/2]} , \Vert \Omega_r \Vert_{L_2[0,1] \rightarrow C[1/2,1]} \rbrace}
+
+\end{array}
+\end{equation}
+
+Если $ K $ - интегральный оперетор:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+Ku = \int\limits_0^1 K(x,t)u(t)dt, K:L_2[0,1] \rightarrow C[a,b], a \leq x \leq b, 0 \leq a < b \leq 1,
+
+\end{array}
+\end{equation}
+то
+\begin{equation}
+\begin{array}{c}
+
+\Vert K \Vert_{L_2[0,1] \rightarrow C[a,b]} = \max\limits_{x \in [a,b]}\biggl(\int\limits_0^1 K^2(x,t)dt\biggr)^{1/2}
+
+\end{array}
+\end{equation}
+В соответствии с (3.1) и (3.10) имеем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = r \max\limits_{0 \leq x \leq 1/2} \biggl(\int\limits_0^1 e^{2r(x-t)}dt\biggr)^{1/2}, \\
+\int\limits_x^1 e^{2r(x-t)}dt = -\dfrac{1}{2r}e^{2r(x-t)}\biggl|_x^1 = \dfrac{1}{2r}(1-e^{-2r(1-x)}), \\
+\max\limits_{0 \leq x \leq 1/2}(1-e^{-2r(1-x)}) = 1 - e^{-2r} \Rightarrow \Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = \dfrac{r^{1/2}}{\sqrt{2}}( 1 - e^{-2r})^{1/2}
+
+\end{array}
+\end{equation}
 \section{Постановка задачи восстановления производной функции порядка $ m $}
 Пусть $ u(x) \in C^{k-1}[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $.
 Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u^{(m)}(x), 0 \leq m \leq k-1 $.
