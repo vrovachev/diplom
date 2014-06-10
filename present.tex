@@ -110,8 +110,8 @@
 \frametitle{Содержание}
 \begin{itemize}
 \item 1. Постановка задачи
-\item 2. Приближающие свойства резольвенты оператора \\ $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.
-\item 3. Приближающие свойства резольвенты оператора \\ $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.
+\item 2. Приближающие свойства резольвенты оператора \\ $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon ,1] $.
+\item 3. Приближающие свойства резольвенты оператора \\ $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon ] $.
 \item 4. Восстановление функции вместе с её производными
 \item 5. Заключение
 \item 6. Список литературы
@@ -136,7 +136,7 @@
 \end{itemize}
 \end{frame}
 
-\section{Приближающие свойства резольвенты оператора $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
+\section{Приближающие свойства резольвенты оператора $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon ,1] $.}
 
 \begin{frame}
 \frametitle{Формула резольвенты дифференциального оператора первого порядка}
@@ -206,7 +206,7 @@ K_{1m}(x,t,k,r) = (-1)^me^{-r(x-t)} \biggl[r^m\dfrac{(x-t)^{k-1}}{(k-1)!} - mr^{
 \end{equation}
 \end{frame}
 
-\section{Приближающие свойства резольвенты оператора $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.}
+\section{Приближающие свойства резольвенты оператора $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon ] $.}
 
 \begin{frame}
 \frametitle{Формула резольвенты дифференциального оператора первого порядка}
@@ -291,13 +291,11 @@ K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\d
 \end{array}
 \end{equation}
 В силу свойств операторов $ \Omega_{1r} $ и $ \Omega_{2r} $ на каждом из отрезков $ [0,1/2] $ и $ [1/2,1] $ эти операторы дают равномерную сходимость в метрике $ C[0,1/2] $ и $ C[1/2,1] $ соответственно к любой функции $ u(x) \in C[0,1] $.
-\end{frame}
 
-\begin{frame}
-Далее определим по аналогии с (13) в соответствии с леммами 1.5~\eqref{lemma1.5} и 2.5~\eqref{lemma2.5} оператор $ \Omega_r^{(k)} $:
+Далее определим по аналогии с (13) в соответствии с леммами 1.5~\eqref{lemma1.5} и 2.5~\eqref{lemma2.5} оператор $ \Omega_r^k $:
 \begin{equation}
 \begin{array}{c}
-\Omega_r^{(k)} u = \left\{
+\Omega_r^k u = \left\{
 \begin{array}{l}
 \Omega_{2r}^ku \equiv r^k\int\limits_x^1 \dfrac{(t-x)^{k-1}}{(k-1)!} e^{r(x-t)}u(t)dt, x \in [0,1/2], \\
 \Omega_{1r}^ku \equiv r^k\int\limits_0^x \dfrac{(x-t)^{k-1}}{(k-1)!} e^{-r(x-t)}u(t)dt, x \in [1/2,1].
@@ -305,7 +303,9 @@ K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\d
 \right.
 \end{array}
 \end{equation}
+\end{frame}
 
+\begin{frame}
 А также построим оператор $ D^k\Omega_r (D^k=\dfrac{d^k}{dx^k}, D' \equiv D) $:
 \begin{equation}
 \begin{array}{c}
@@ -319,45 +319,29 @@ k=1,2,...
 \end{array}
 \end{equation}
 где в соответствии с леммами 1.3~\eqref{lemma1.3} и 2.3~\eqref{lemma2.3} операторы $ D^k\Omega_{1r}u $ и $ D^k\Omega_{2r}u $ определены в формулах (3) и (9) соответственно.
-\end{frame}
 
-\begin{frame}
-\label{theorem3.1}
-\textbf{Теорема 3.1}
-\textit{Для любой функции $ u(x) \in C^l[0,1], l \geq 0 $ выполняется сходимость:}
+И оператор $ D^m\Omega_r^k $ при $ k \geq 1, m = 0,...,k-1 $:
 \begin{equation}
 \begin{array}{c}
-\Vert D^k\Omega_r u - u^{(k)} \Vert_{L_\infty[0,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k =0,1,...,l.
-\end{array}
-\end{equation}
-
-Рассмотрим операторы $ D^m\Omega_r^{(k)} $ при $ k \geq 1, m = 0,...,k-1 $:
-\begin{equation}
-\begin{array}{c}
-D^m\Omega_r^{(k)} u = \left\{
+D^m\Omega_r^k u = \left\{
 \begin{array}{l}
-D^m\Omega_{2r}^ku \equiv r^k\int\limits_x^1 K_{2m}(x,t,k,r) u(t)dt, x \in [0,1/2], \\
+D^m\Omega_{2r}^ku \equiv r^k\int\limits_x^1 K_{2m}(x,t,k,r) u(t)dt, x \in [0,1/2], \\\\
 D^m\Omega_{1r}^ku \equiv r^k\int\limits_0^x K_{1m}(x,t,k,r) u(t)dt, x \in [1/2,1].
 \end{array}
 \right.
 \end{array}
 \end{equation}
-где $ K_{1m}(x,t,k,r) $, $ K_{2m}(x,t,k,r) $ определены в формулах (1.22),(2.19) в соответствии с леммами 1.8~\eqref{lemma1.8} и 2.8~\eqref{lemma2.8}.
-
-\label{theorem3.2}
-\textbf{Теорема 3.2}
-\textit{Для любой функции $ u(x) \in C^{k-1}[0,1] $ при $ k \geq 1, m = 0,...,k-1 $ выполняется сходимость:}
-\begin{equation}
-\begin{array}{c}
-\Vert D^m\Omega_r^{(k)} u - u^{(m)} \Vert_{L_\infty[0,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty .
-\end{array}
-\end{equation}
+где $ K_{1m}(x,t,k,r) $, $ K_{2m}(x,t,k,r) $ определены в соответствии с леммами 1.8~\eqref{lemma1.8} и 2.8~\eqref{lemma2.8}.
 \end{frame}
 
 \begin{frame}
 \frametitle{Задача восстановления функции}
-\label{theorem3.3}
-\textbf{Теорема 3.3}
+Пусть $ u(x) \in C^m[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $, т.е. $ \Vert f_\delta -u \Vert_{L_2[0,1]} \leq \delta $. Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u(x) $.
+Строится приближение с помощью оператора $ \Omega_r $
+
+\label{theorem3.1}
+\textbf{Теорема 3.1}
+
 \textit{Для сходимости}
 \begin{equation}
 \begin{array}{c}
@@ -375,8 +359,13 @@ r = r(\delta), r(\delta) \rightarrow \infty, (r(\delta))^{1/2}\delta \rightarrow
 
 \begin{frame}
 \frametitle{Задача восстановления производной функции порядка $ m $}
-\label{theorem3.4}
-\textbf{Теорема 3.4}
+Пусть $ u(x) \in C^{k-1}[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $.
+Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u^{(m)}(x), 0 \leq m \leq k-1 $.
+Строится приближение с помощью оператора $ D^m\Omega_r^{(k)} $
+
+\label{theorem3.2}
+\textbf{Теорема 3.2}
+
 \textit{Для сходимости}
 \begin{equation}
 \begin{array}{c}
