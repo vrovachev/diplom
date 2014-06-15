@@ -13,11 +13,50 @@
 \tableofcontents
 
 \abbrevdef
+Дифференциальное уравнение — уравнение, связывающее значение производной функции с самой функцией, значениями независимой переменной, числами (параметрами). Дифференциальные уравнения – это соотношение вида $ F(x_1, x_2, x_3,...,y, y', y'',...,y^{(n)}) = 0 $, связывающее независимые переменные $ x_1, x_2, x_3,... $ функцию $ y $ этих независимых переменных и ее производные до n-го порядка. При этом функция $ F $ определена и достаточное число раз дифференцируема в некоторой области изменения своих аргументов. \\
+
+Дифференциальный оператор - оператор, определённый некоторым дифференциальным выражением и действующий в пространствах функций на дифференцируемых многообразиях, или в пространствах, сопряжённых к пространствам этого типа. Дифференциальные операторы представляют собой обобщение операции дифференцирования. Простейший дифференциальный оператор $ D $, действуя на функцию $ y $, "возвращает" первую производную этой функции: $ Dy(x) = y'(x) $. \\
+
+Гладкая функция - функция, все частные производные которой до порядка $ n $ включительно существуют и непрерывны. Это означает “гладкость” порядка $ n $. \\
+
+$ f \in C[0,1] $ - функция, непрерывная на отрезке $[0,1]$. \\
+
+$ f \in C^m[0,1] $ - функция, гладкая на отрезке $[0,1]$. \\
+
+$ \Vert x \Vert_{C[0,1]} = \max\limits_{t \in [0,1]}\vert x(t) \vert $. Эту норму также называют нормой Чебышёва или равномерной нормой, так как сходимость по этой норме эквивалентна равномерной сходимости. \\
+
+$ \Vert x \Vert_{L_2[0,1]} = \sqrt{\int\limits_0^x f^2(t)dt} $. В $ L_2 $ норма порождается скалярным произведением. Таким образом, вместе с понятием "длины" здесь имеет смысл и понятие "угла", а следовательно и смежные понятия, такие как ортогональность, проекция. \\
+
+$ \Vert f \Vert_{L_\infty[0,1]} = ess\sup\limits_{x \in [0,1]} \vert f(x) \vert $. Где $ ess\sup $ - существенный супремум функции. \\
+ 
+\label{theorem Banach Steinhaus}
+Теорема Банаха-Штейнгауса. Пусть $ {A_n} $ - последовательность линейных операторов, $ A_0 $ - некоторый фиксированный линейный оператор в банаховом пространстве. Для того, чтобы  последовательность $ {A_n} $ линейных операторов поточечно сходилось к оператору $ A_0 $ или $ A_nx \rightarrow A_0x \forall x \in X $ необходимо и достаточно, чтобы:
+1) Последовательность норм $ \lbrace\Vert A_n  \Vert\lbrace $ была ограничена. ($ \lbrace\Vert A_n  \Vert\lbrace \leq C, C $ не зависит от $ n $)
+2) $ A_nx \rightarrow A_0x $ для некоторого всюду плотного $ M \subset X $. \\
+
+\label{theorem Weierstrass}
+Аппроксимационная теорема Вейерштрасса.
+Для любой непрерывной функции на отрезке можно подобрать последовательность многочленов, равномерно сходящихся к этой функции на отрезке.
+Пусть $ f $ - непрерывная функция, определённая на отрезке $ [a,b] $. Тогда для любого $ \varepsilon > 0 $ существует такой многочлен $ p $ с вещественными коэффициентами, что для любого $ x $ из $ [a,b] $ выполнено условие $ \vert f(x) - p(x) \vert < \varepsilon $.
+Если $ f(x) $ непрерывна на круге (периодична), то утверждение верно и для тригонометрических многочленов.
+Теорема справедлива и для комплекснозначных функций, но тогда коэффициенты полинома $ p $ следует считать комплексными числами.
+
 \intro
+Такие вопросы теории дифференциальных уравнений, как существование, единственность, регулярность, непрерывная зависимость решений от начальных данных или правой части, явный вид решения дифференциального уравнения, определённого данным дифференциальным выражением, естественно интерпретируются в терминах теории операторов как задачи дифференциального оператора, определённого данным дифференциальным выражением в подходящих функциональных пространствах, а именно - как задачи о ядре, образе, изучении структуры области определения данного дифференциального оператора   или его расширения, непрерывности обратного оператора к данному дифференциальному оператору и явного построения этого обратного оператора.
+
+Теория дифференциальных операторов позволяет разрешить ряд трудностей классической теории дифференциальных уравнений. Использование различных расширений обычных дифференциальных операторов приводит к понятию обобщённого решения соответствующего дифференциального уравнения (которое в ряде случаев, связанных, например, с эллиптическими задачами, оказывается необходимо классическим), а использование линейной структуры позволяет вводить понятие слабых решений дифференциальных уравнений. При выборе подходящего расширения дифференциального оператора, определённого дифференциальным выражением, важную роль играют связанные с конкретным видом последнего априорные оценки для решений, которые позволяют указать такие функциональные пространства, что в этих пространствах дифференциальных операторов непрерывен или ограничен.
+
+Теория дифференциальных операторов даст возможность поставить и решить и ряд принципиально новых задач по сравнению с классическими задачами теории дифференциальных уравнений. Так, для нелинейных операторов представляют интерес изучение структуры множества его неподвижных точек и действие оператора в их окрестности, а также классификация этих особых точек и вопрос об устойчивости типа особой точки при возмущении данного дифференциального оператора; для линейных дифференциальных операторов кроме указанных выше задач, представляют интерес задачи об описании и изучении спектра дифференциальных операторов, построения его резольвенты, вычислений индекса, описание структуры инвариантных подпространств данного дифференциального оператора, построение связанного с данным дифференциальным оператором гармонического анализа (в частности, разложения по собственным функциям, что требует предварительного изучения вопросов полноты системы собственных и присоединённых функций), изучения линейных и нелинейных возмущений данного дифференциального оператора.
+
+В данной работе рассматриваются второстепенные задачи построения резольвенты, нахождения  приближающих свойств резольвенты дифференциального оператора, расширения приближающих свойств резольвенты на пространство гладких функций, нахождения приближающих свойств производной от резольвенты порядка $ m $ в пространствах гладких функций \cite{Schtraus:1954}. 
+
+А также рассматриваются основные задачи применения приближающих свойств резольвенты и приближающих свойств производной от резольвенты порядка $ m $ в пространствах гладких функций задачи для восстановления функции а также задачи восстановления производной функции порядка $ m $.
+
+
 \chapter{Приближающие свойства резольвенты оператора \\ $ L_1:y', y(0)=0 $ на отрезке $ [\varepsilon, 1] $.}
 Рассмотрим простейший дифференциальный оператор первого порядка $ L_1:y^{'}, y(0)=0 $. Обозначим через $ R_\lambda(L_1) $ его резольвенту, т.е. оператор $ R_\lambda(L_1)=(L_1-\lambda E)^{-1} $, где $ E $ - единичный оператор, $ \lambda $ - спектральный параметр (числовой параметр,  вообще говоря, комплексный). Найдем формулу для резольвенты.
 
-\section{Лемма 1.1}
+\section{Лемма 1.1. Формула резольвенты дифференциального оператор первого порядка.}
 \label{lemma1.1}
 
 \textit{Для $ y(x) = R_\lambda(L_1)u$ имеет место формула:}
@@ -72,7 +111,7 @@ rR_{-r}(L_1)u = r \int\limits_0^x e^{-r(x-t)}u(t)dt
 
 Выясним приближающие свойства операторов (1.5) при $ r \rightarrow \infty$.
 
-\section{Лемма 1.2}
+\section{Лемма 1.2. Приближающие свойства резольвенты дифференциального оператор первого порядка.}
 \label{lemma1.2}
 
 \textit{Для любой функции $ u(x) \in C[0,1] $ имеет место сходимость:}
@@ -158,7 +197,7 @@ rR_{-r}(L_1)u - u = u(x) - e^{-rx}u(0) - \int\limits_0^x e^{-r(x-t)}u'(t)dt.
 \end{array}
 \end{equation}
 
-Далее, множество функций $ u \in C^1[0,1] $ является всюду плотным в пространстве $ C[0,1] $. (Это следует из теоремы Вейерштрасса об аппроксимации непрерывной функции полиномами). Поэтому по теореме Банаха- Штейнгауза из ограниченности норм операторов $ rR_{-r}(L_1) $ отсюда следует сходимость (1.6) для любой $ u \in C[0,1] $.
+Далее, множество функций $ u \in C^1[0,1] $ является всюду плотным в пространстве $ C[0,1] $. (Это следует из теоремы Вейерштрасса об аппроксимации непрерывной функции полиномами). Поэтому по теореме Банаха- Штейнгауса~\eqref{theorem banach steinhaus} из ограниченности норм операторов $ rR_{-r}(L_1) $ отсюда следует сходимость (1.6) для любой $ u \in C[0,1] $.
 
 Лемма доказана.
 
@@ -166,7 +205,7 @@ rR_{-r}(L_1)u - u = u(x) - e^{-rx}u(0) - \int\limits_0^x e^{-r(x-t)}u'(t)dt.
 
 Пусть сначала $ u \in C^{l-1}[0,1] $. Рассмотрим операторы $ D^kR_{-r}(L_1) \equiv (R_{-r}(L_1)u)_x^{(k)} k = 1,...,l, D^1 \equiv D (Du = u')$.
 
-\section{Лемма 1.3}
+\section{Лемма 1.3. Формула резольвенты в пространствах гладких функций}
 \label{lemma1.3}
 
 \textit{Операторы $ D^kR_{-r}(L_1) $ имеют вид:}
@@ -218,7 +257,7 @@ D^{m}R_{-r}(L_1)u = D(D^{m-1}R_{-r}(L_1)u) = u^{(m-1)}(x) - ru^{(m-2)}(x) + ... 
 
 Лемма доказана.
 
-\section{Лемма 1.4}
+\section{Лемма 1.4. Приближающие свойства резольвенты в пространствах гладких функций.}
 \label{lemma1.4}
 
 \textit{Если $ u(x) \in C^l[0,1] $, то имеет место сходимость:}
@@ -226,7 +265,7 @@ D^{m}R_{-r}(L_1)u = D(D^{m-1}R_{-r}(L_1)u) = u^{(m-1)}(x) - ru^{(m-2)}(x) + ... 
 \begin{equation}
 \begin{array}{c}
 
-\Vert rD^k R_{-r}(L_1)u -u^{(k)}(x) \Vert_{C[\varepsilon ,1} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,...,l.
+\Vert rD^k R_{-r}(L_1)u -u^{(k)}(x) \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,...,l.
 
 \end{array}
 \end{equation}
@@ -249,7 +288,7 @@ DR_{-r}(L_1)u = u(x) - r\int\limits_0^x e^{-r(x-t)}u(t)dt.
 \begin{array}{c}
 
 \int\limits_0^x e^{-r(x-t)}u(t)dt = e^{-rx}\int\limits_0^x e^{rt}u(t)dt = \\
-= e^{-rx} \big\vert_0^x \frac{1}{r} e^{rt}u(t) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt = \\
+= e^{-rx} \biggl\vert_0^x \frac{1}{r} e^{rt}u(t) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt = \\
 = \frac{1}{r}u(x) - \frac{1}{r} e^{-rx}u(0) - \frac{1}{r}\int\limits_0^x e^{-r(x-t)}u'(t)dt
 
 \end{array}
@@ -264,10 +303,8 @@ DR_{-r}(L_1)u = u(x) - r\int\limits_0^x e^{-r(x-t)}u(t)dt.
 DR_{-r}(L_1)u = e^{-rx}u(0) + \int\limits_0^x e^{-r(x-t)}u'(t)dt
 
 \end{array}
-\end{equation}
-
+\end{equation}	
 или
-
 \begin{equation}
 \begin{array}{c}
 
@@ -327,7 +364,6 @@ D^{m-1}R_{-r}(L_1)u = R_{-r}(L_1)u^{(m-1)} + e^{-rx}u^{(m-2)}(0) - re^{-rx}u^{(m
 \end{equation}
 
 Тогда
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -339,7 +375,6 @@ D^mR_{-r}(L_1)u = D(D^{m-1}R_{-r}(L_1)u) = DR_{-r}(L_1)u^{(m-1)} + \\
 \end{equation}
 
 Используя (1.13) с заменой $ u(x) $ на $ u^{(m-1)}(x) $, придём к выражению:
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -351,7 +386,6 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{equation}
 
 Из формулы (1.14) получаем оценку:
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -363,11 +397,11 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 
 И тогда соотношение (1.10) вытекает из леммы 1.2.
 
-\textbf{Замечание}. Если в лемме 1.2 $ u(0) = 0 $, то сходимость (1.6) будет выполняться при $ \varepsilon = 0$, т.е. на всем отрезке $ [0,1] $. Если в лемме 1.4 $ u^{(m)}(0) = 0, m = 0,1,...,k $, , то сходимость 1.10 будет выполняться также при $ \varepsilon = 0 $.
+\textbf{Замечание}. Если в лемме 1.2~\eqref{lemma1.2} $ u(0) = 0 $, то сходимость (1.6) будет выполняться при $ \varepsilon = 0$, т.е. на всем отрезке $ [0,1] $. Если в лемме 1.4~\eqref{lemma1.4} $ u^{(m)}(0) = 0, m = 0,1,...,k $, , то сходимость 1.10 будет выполняться также при $ \varepsilon = 0 $.
 
 В дальнейшем нам потребуются свойства не только самих операторов $ rR_{-r}(L_1) $, но и их степеней – операторов $ (rR_{-r}(L_1))^k $.
 
-\section{Лемма 1.5}
+\section{Лемма 1.5. Формула степеней резольвенты}
 \label{lemma1.5}
 
 \textit{Операторы $ (rR_{-r}(L_1))^k $ имеют вид:}
@@ -407,7 +441,6 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{equation}
 
 Тогда
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -421,10 +454,8 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{equation}
 
 что и требовалось доказать.
-
-\section{Лемма 1.6}
+\section{Лемма 1.6. Формула степеней резольвенты в пространстве непрерывно дифференцируемых функций первого порядка}
 \label{lemma1.6}
-
 \textit{Если $ u \in C^1[0,1] $, то операторы $ \Omega_{1r}^k $ имеют представление:}
 
 \begin{equation}
@@ -483,7 +514,7 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 
 что и требовалось доказать.
 
-\section{Лемма 1.7}
+\section{Лемма 1.7. Приближающие свойства резольвенты в пространствах непрерывных функций.}
 \label{lemma1.7}
 
 \textit{Для $ u(x) \in C[0,1] $ справедливы соотношения:}
@@ -496,7 +527,7 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{array}
 \end{equation}
 
-\textbf{Доказательство.} Для $ k = 1 $ соотношение (1.17) доказано в Лемме 1.2.
+\textbf{Доказательство.} Для $ k = 1 $ соотношение (1.17) доказано в Лемме 1.2~\eqref{lemma1.2}.
 Пусть $ k \geq 2 $, а $ u(x) \in C^k[0,1] $ обозначим $ \varphi_l(r,x) = - \dfrac{r^lx^le^{-rx}}{l!} $.
 Из (1.16) имеем:
 \begin{equation}
@@ -512,7 +543,7 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 
 Далее, поскольку $ \varphi_l(r,x) \leq r^le^{-r\varepsilon} $ на отрезке $ [\varepsilon ,1] $, то сумма слагаемых, содержащих функции $ \varphi_l(r,x), l = 1,...,k-1  $, имеет оценку $ O(r^{k-1}e^{-r\varepsilon}\Vert u \Vert_{C[0,1]}) $.
 
-По лемме 1.2 $ \Vert \Omega_{1r}u - u \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty $ для любой $ u(x) \in C[0,1] $. 
+По лемме 1.2~\eqref{lemma1.2} $ \Vert \Omega_{1r}u - u \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty $ для любой $ u(x) \in C[0,1] $. 
 
 Осталось показать, что слагаемые, содержащие $ u'(x) $, могут быть как угодно малыми при $ r \rightarrow \infty $, если $ u(x) \in C^k[0,1] $, т.е., что $ \bigl\Vert \dfrac{1}{r}\Omega_{1r}^lu' \bigr\Vert_{C[\varepsilon ,1]} \rightarrow 0$ при $ r \rightarrow \infty $ для $ l = 2,...,k $.
 
@@ -528,12 +559,12 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{equation}
 
 Но $ \dfrac{1}{r}\Omega_{1r}u' $ и $ \dfrac{1}{r^2}\Omega_{1r}^2u'' $ есть $ O(\dfrac{1}{r}) $. Действительно,
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
-\dfrac{1}{r}\vert\Omega_{1r}u'\vert = \bigl\vert \int\limits_0^x e^{-r(x-t)}u'(t)dt \bigr\vert \leq \Vert u' \Vert_{C[0,1]} \int\limits_0^x e^{-r(x-t)}dt = \dfrac{1}{r}(1 - e^{-rx})\Vert u' \Vert_{C[0,1]} \leq \dfrac{1}{r} \Vert u' \Vert_{C[0,1]}.
+\dfrac{1}{r}\vert\Omega_{1r}u'\vert = \biggl\vert \int\limits_0^x e^{-r(x-t)}u'(t)dt \biggr\vert \leq \Vert u' \Vert_{C[0,1]} \int\limits_0^x e^{-r(x-t)}dt = \\\\
+= \dfrac{1}{r}(1 - e^{-rx})\Vert u' \Vert_{C[0,1]} \leq \dfrac{1}{r} \Vert u' \Vert_{C[0,1]}.
 
 \end{array}
 \end{equation}
@@ -544,7 +575,7 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \begin{array}{c}
 \nonumber
 
-\dfrac{1}{r^2} \vert \Omega_{1r}^2u'' \vert = \bigl| \int\limits_0^x e^{-r(x-t)}(x-t)u''(t)dt \bigr| \leq \dfrac{1}{r} \Vert u'' \Vert_{C[0,1]}.
+\dfrac{1}{r^2} \biggl\vert \Omega_{1r}^2u'' \biggr\vert = \biggl\vert \int\limits_0^x e^{-r(x-t)}(x-t)u''(t)dt \biggr\vert \leq \dfrac{1}{r} \Vert u'' \Vert_{C[0,1]}.
 
 \end{array}
 \end{equation}
@@ -580,7 +611,7 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 Берём интегралы в правых частях (1.19) и (1.20) по частям, каждый раз "перебрасывая" производную на функцию $ u'(t) $ до тех пор, пока перед интегралами не исчезнут степени $ r $, т.е. интегрируем $ l-2 $ раза. Тогда в (1.19) мы придём к интегралу $ \int\limits_0^x e^{-r(x-t)}u^{(l-1)}(t)dt $  а в (1.20) - к интегралу $ \int\limits_0^x e^{-r(x-t)}(x - t)u^l(t)dt $ которые имеют оценки $ O\biggl( \dfrac{1}{r}\Vert u^{(l - 1)} \Vert_{C[0,1]} \biggr) $ и $ O\biggl( \dfrac{1}{r}\Vert u^{(l)} \Vert_{C[0,1]} \biggr) $ соответственно.
 
 Подстановки, которые получаются при интегрировании, будут состоять из функций $ \varphi_m(r,x), m = 1,...,l-3 $ - в формуле (1.19); $ m = 1,...,l-2 $ - в формуле (1.20), умноженных на значения производных функции $ u(x) $ в нуле до $ l-2 $ порядка включительно для формулы (1.19) и до $ l-1 $ порядка включительно для формулы (1.20). Общая сумма этих подстановок и первого слагаемого, стоящего в правой части выражения (1.18), будет иметь порядок $ r^{l-1}e^{-r\varepsilon} $ на отрезке $ [\varepsilon ,1] $.
-Из вышесказанного следует, что соотношения (1.17) выполняются для любой $ u(x) \in C^k[0,1] $. Но множество функций, $ k $ раз непрерывно дифференцируемых, всюду плотно в пространстве $ C[0,1] $ по теореме Вейерштрасса.
+Из вышесказанного следует, что соотношения (1.17) выполняются для любой $ u(x) \in C^k[0,1] $. Но множество функций, $ k $ раз непрерывно дифференцируемых, всюду плотно в пространстве $ C[0,1] $ по теореме Вейерштрасса~\eqref{theorem Weierstrass}.
 
 Далее нормы операторов $ \Omega_{1r}^k $, рассматриваемых как операторы из $ C[0,1] $ в $ C_\varepsilon [0,1] $, ограничены константами, не зависящими от $ r $, поскольку из (1.8) следует:
 
@@ -594,11 +625,11 @@ D^mR_{-r}(L_1)u = R_{-r}(L_1)u^{(m)} + e^{-rx}u^{(m-1)}(0) - re^{-rx}u^{(m-2)}(0
 \end{equation}
 
 
-По теореме Бахана-Штейнгауза соотношение (1.17) справедливо для любой $ u \in C[0,1] $.
+По теореме Бахана-Штейнгауcа~\eqref{theorem Banach Steinhaus} соотношение (1.17) справедливо для любой $ u \in C[0,1] $.
 
 Выясним вопрос о приближении производных с помощью операторов $ \Omega_{1r}^k $. Обозначим $ D^m\Omega_{1r}^ku = \dfrac{d^m}{dx^m}\Omega_{1r}^ku, D^1 \equiv D $.
 
-\section{Лемма 1.8}
+\section{Лемма 1.8. Формула производной от резольвенты \\ порядка $ m $}
 \label{lemma1.8}
 
 \textit{Операторы $ D^m\Omega_{1r}^ku $ при $ k \geq 1, m = 0,...,k-1 $ имеют вид}
@@ -612,7 +643,6 @@ D^m\Omega_{1r}^ku = r^k\int\limits_0^x K_{1m}(x,t,k,r)u(t)dt,
 \end{equation}
 
 \textit{где}
-
 \begin{equation}
 \begin{array}{c}
 
@@ -622,7 +652,7 @@ K_{1m}(x,t,k,r) = (-1)^me^{-r(x-t)} \biggl[r^m\dfrac{(x-t)^{k-1}}{(k-1)!} - mr^{
 \end{array}
 \end{equation}
 
-\textbf{Доказательство.} По лемме 1.5 операторы $ \Omega_{1r}^k $ имеют вид:
+\textbf{Доказательство.} По лемме 1.5~\eqref{lemma1.5} операторы $ \Omega_{1r}^k $ имеют вид:
 
 \begin{equation}
 \begin{array}{c}
@@ -642,9 +672,7 @@ K_{10}(x,t,k,r) = e^{-r(x-t)}\dfrac{(x-t)^{k-1}}{(k-1)!}.
 
 \end{array}
 \end{equation}
-
 Тогда будем иметь:
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -702,7 +730,6 @@ D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^m\biggl[\dfrac{(x-t)^{k-1}}{(k-1)!}e^{-
 Тогда $ D^mK_{10}(x,t,k,r) = D^m[e^{-r(x-t)}\varphi_{k-1}(x,t)]$.
 Учтем, что $ D\varphi_l(x,t) = \varphi_{l-1}(x,t) $.
 Тогда получим
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -729,7 +756,6 @@ D^lK_{10}(x,t,k,r) = (-1)^le^{-r(x-t)}[r^l\varphi_{k-1}(x,t) - \\ - lr^{l-1}\var
 \end{equation}
 
 Найдём $ D^{l+1}K_{10}(x,t,k,r) $. Имеем из (1.25):
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -739,9 +765,7 @@ D^{l+1}K_{10}(x,t,k,r) = D(D^lK_{10}(x,t,k,r)) = D\lbrace (-1)^le^{-r(x-t)}[r^l\
 
 \end{array}
 \end{equation}
-
 Получим:
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
@@ -765,9 +789,9 @@ C_l^j + C_l^{j+1} = \dfrac{l(l-1)...(l-j+1)}{j!} + \dfrac{l(l-1)...(l-j)}{(j+1)!
 \end{array}
 \end{equation}
 
-Отсюда получаем формулу (1.25) с заменой $ l $ на $ l + 1 $. Наконец, подставляя в $ m $ вместо $ l $ выражения $ \varphi_l(x,t) $, получим утверждение леммы 1.8.
+Отсюда получаем формулу (1.25) с заменой $ l $ на $ l + 1 $. Наконец, подставляя в $ m $ вместо $ l $ выражения $ \varphi_l(x,t) $, получим утверждение леммы 1.8~\eqref{lemma1.8}.
 
-\section{Лемма 1.9}
+\section{Лемма 1.9. Приближающие свойства производной от резольвенты порядка $ m $ в пространствах гладких функций.}
 \label{lemma1.9}
 \textit{При $ k \geq 2, m=1,...,k-1 $ для любой функции $ u(x) \in C^{k-1}[0,1] $ справедливы соотношения:}
 
@@ -798,7 +822,8 @@ D\Omega_{1r}^2u = r^2\int\limits_0^x \dfrac{d}{dx}[e^{-r(x-t)}(x-t)]u(t)dt = \\ 
 
 \end{array}
 \end{equation}
-по Лемме 1.7.
+по лемме 1.7~\eqref{lemma1.7}.
+
 Для $ k = 3 $ имеем:
 \begin{equation}
 \begin{array}{c}
@@ -838,7 +863,7 @@ D^2\Omega_{1r}^3u = D(D\Omega_{1r}^3u) = r^3D(\dfrac{x^2}{2}e^{-rx})u(0) + D\Ome
 \end{equation}
 Из (28) заменяя $ u $ на $ u' $, получаем, что $ \Vert D^2\Omega_{1r}^3u - u'' \Vert_{C[\varepsilon ,1]} \rightarrow 0 $ при $ r \rightarrow \infty $.
 
-Действуем так же, как и в случае любого $ m $, т.е. сначала получаем формулу, аналогичную (1.29), а затем пользуемся леммой 1.7.
+Действуем так же, как и в случае любого $ m $, т.е. сначала получаем формулу, аналогичную (1.29), а затем пользуемся леммой 1.7~\eqref{lemma1.7}.
 
 В соответствии с (1.24) имеем:
 \begin{equation}
@@ -858,7 +883,7 @@ D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^m \biggl[ \dfrac{(x-t)^{k-1}}{(k-1)!}e^
 
 \end{array}
 \end{equation}
-Поскольку в лемме 1.8 $ D^lK_{10}(x,t,k,r) = K_{1l}(x,t,k,r) $, где $ K_{1l}(x,t,k,r) $ имеет вид (1.22) с заменой $ m $ на $ l $, то отсюда следует, что все подстановки в выражении (1.30) есть $ O(r^{m-1}e^{-r\varepsilon}) $ на отрезке $ [\varepsilon ,1] $.
+Поскольку в лемме 1.8~\eqref{lemma1.8} $ D^lK_{10}(x,t,k,r) = K_{1l}(x,t,k,r) $, где $ K_{1l}(x,t,k,r) $ имеет вид (1.22) с заменой $ m $ на $ l $, то отсюда следует, что все подстановки в выражении (1.30) есть $ O(r^{m-1}e^{-r\varepsilon}) $ на отрезке $ [\varepsilon ,1] $.
 
 Отсюда получаем:
 \begin{equation}
@@ -869,7 +894,7 @@ D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^m \biggl[ \dfrac{(x-t)^{k-1}}{(k-1)!}e^
 
 \end{array}
 \end{equation}
-Из леммы 1.7 следует соотношение (1.26).
+Из леммы 1.7~\eqref{lemma1.7} следует соотношение (1.26).
 
 \chapter{Приближающие свойства резольвенты оператора \\ $ L_2:y', y(1)=0 $ на отрезке $ [0, 1 - \varepsilon] $.}
 Рассмотрим оператор $ L_2: y', y(1) = 0 $, отличающийся от оператора $ L_1 $ лишь граничным условием.
@@ -878,7 +903,7 @@ D^m\Omega_{1r}^ku = r^k\int\limits_0^x D^m \biggl[ \dfrac{(x-t)^{k-1}}{(k-1)!}e^
 
 Получим аналоги лемм 1.1-1.9.
 
-\section{Лемма 2.1}
+\section{Лемма 2.1. Формула резольвенты дифференциального оператор первого порядка.}
 \label{lemma2.1} 
 \textit{Для $ y(x) = R_\lambda(L_2) $ имеет место формула:}
 \begin{equation}
@@ -905,7 +930,7 @@ y(1) = 0.
 \end{array}
 \end{equation}
 
-Общее решение уравнения (2.2) из доказательства леммы 1.1 имеет вид (1.4).
+Общее решение уравнения (2.2) из доказательства леммы 1.1~\eqref{lemma1.1} имеет вид (1.4).
 
 Найдём $ С $ из условия (2.3):
 \begin{equation}
@@ -937,7 +962,7 @@ y(x) - -e^{\lambda t}\int\limits_0^1 e^{-\lambda t}u(t)dt + \int\limits_0^x e^{\
 
 Положим в (2.1) $ \lambda =-r $, где $ r > 0 $ и рассмотрим операторы $ -rR_r(L_2) $.
 
-\section{Лемма 2.2}
+\section{Лемма 2.2. Приближающие свойства резольвенты дифференциального оператор первого порядка.}
 \label{lemma2.2}
 \textit{Для любой непрерывной функции $ u(x) $ имеет место сходимость:}
 \begin{equation}
@@ -949,12 +974,13 @@ y(x) - -e^{\lambda t}\int\limits_0^1 e^{-\lambda t}u(t)dt + \int\limits_0^x e^{\
 \end{equation}
 \textit{где $ \varepsilon $ - любое малое положительное число.}
 
-\textbf{Доказательство.} Так же, как в лемме 1.2, сначала докажем сходимость (2.5) для $ u(x) \in C^1[0,1] $. Тогда имеем:
+\textbf{Доказательство.} Так же, как в лемме 1.2~\eqref{lemma1.2}, сначала докажем сходимость (2.5) для $ u(x) \in C^1[0,1] $. Тогда имеем:
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
-\int\limits_x^1 e^{r(x-t)}u(t)dt = e^{rx}\int\limits_x^1 e^{-rt}u(t)dt = -e^{rx}\dfrac{1}{r}\biggl[ e^{-rt}u(t)dt\bigg\vert_x^1 - \int\limits_x^1 e^{-rx}u'(t)dt\biggr] = \dfrac{1}{r}u(x) - \dfrac{1}{r}e^{-r(1-x)}u(1) + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}u'(t)dt.
+\int\limits_x^1 e^{r(x-t)}u(t)dt = e^{rx}\int\limits_x^1 e^{-rt}u(t)dt = \\
+= -e^{rx}\dfrac{1}{r}\biggl[ e^{-rt}u(t)dt\bigg\vert_x^1 - \int\limits_x^1 e^{-rx}u'(t)dt\biggr] = \\ = \dfrac{1}{r}u(x) - \dfrac{1}{r}e^{-r(1-x)}u(1) + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}u'(t)dt.
 
 \end{array}
 \end{equation}
@@ -962,7 +988,7 @@ y(x) - -e^{\lambda t}\int\limits_0^1 e^{-\lambda t}u(t)dt + \int\limits_0^x e^{\
 \begin{equation}
 \begin{array}{c}
 
-\Vert -rR_r(L_2)u - u \Vert_{C[0,1-\varepsilon]} \leq \vert u(1) \vert e^{-r\varepsilon} + \Vert u' \Vert_{C[0,1]}\times\biggl\Vert \int\limits_x^1 e^{r(x-t)}dt\biggr\Vert_{C[0,1-\varepsilon]},
+\Vert -rR_r(L_2)u - u \Vert_{C[0,1-\varepsilon]} \leq \\ \leq \vert u(1) \vert e^{-r\varepsilon} + \Vert u' \Vert_{C[0,1]}\times\biggl\Vert \int\limits_x^1 e^{r(x-t)}dt\biggr\Vert_{C[0,1-\varepsilon]},
 
 \end{array}
 \end{equation}
@@ -988,7 +1014,7 @@ y(x) - -e^{\lambda t}\int\limits_0^1 e^{-\lambda t}u(t)dt + \int\limits_0^x e^{\
 \end{equation}
 в силу оценки (2.7).
 
-Далее, как в лемме 1.2~\eqref{lemma1.2}, применяем теорему Банаха-Штейнгауза к операторам $ -rR_r(L_2) $ и получаем утверждение леммы 2.2~\eqref{lemma2.2}.
+Далее, как в лемме 1.2~\eqref{lemma1.2}, применяем теорему Банаха-Штейнгауcа~\eqref{theorem Banach Steinhaus} к операторам $ -rR_r(L_2) $ и получаем утверждение леммы 2.2~\eqref{lemma2.2}.
 
 Теперь займёмся приближающими свойствами операторов $ -rR_r(L_2) $ в пространстве $ C^l[0,1] $.
 
@@ -1003,7 +1029,7 @@ D^kR_r(L_2)u \equiv (R_r(L_2)u)_x^{(k)}, k = 1,...,l, D^1 \equiv D (Du = u').
 \end{array}
 \end{equation}
 
-\section{Лемма 2.3}
+\section{Лемма 2.3. Формула резольвенты в пространствах гладких функций}
 \label{lemma2.3}
 \textit{Операторы $ D^kR_r(L_2) $ имеют вид:}
 \begin{equation}
@@ -1027,7 +1053,7 @@ DR_r(L_2)u = (R_r(L_2)u)_x' = \biggl( -\int\limits_x^1 e^(r(x-t))u(t)dt \biggr)_
 
 Применяем метод математической индукции, как и в доказательстве леммы 1.3~\eqref{lemma1.3}. Все выкладки повторяются с заменой интеграла $ \int\limits_0^x $ на интеграл $ \int\limits_x^1 $, а экспоненты $ e^{-r(x-t)} $ на экспоненту $ e^{r(x-t)} $. В результате получаем формулу (2.8).
 
-\section{Лемма 2.4}
+\section{Лемма 2.4. Приближающие свойства резольвенты в пространствах гладких функций.}
 \label{lemma2.4}
 \textit{Если $ u(x) \in C^l[0,1] $, то имеет место сходимость:}
 \begin{equation}
@@ -1101,7 +1127,7 @@ D^kR_r(L_2)u = R_r(L_2)u^{(k)} + e^{-r(1-x)}u^{(k-1)}(1) - re^{r(1-x)}u^{(k-2)}(
 
 Обозначим $ -rR_r(L_2) = \Omega_{2r} $ и рассмотрим свойства степеней $ \Omega_{2r}^k $.
 
-\section{Лемма 2.5}
+\section{Лемма 2.5. Формула степеней резольвенты}
 \label{lemma2.5}
 \textit{операторы $ \Omega_{2r}^k $ имеют вид:}
 \begin{equation}
@@ -1145,7 +1171,7 @@ D^kR_r(L_2)u = R_r(L_2)u^{(k)} + e^{-r(1-x)}u^{(k-1)}(1) - re^{r(1-x)}u^{(k-2)}(
 
 Повторяем рассуждения, приведённые в доказательстве леммы 1.5~\eqref{lemma1.5}, приходим к утверждению леммы 2.5~\eqref{lemma2.5}.
 
-\section{Лемма 2.6}
+\section{Лемма 2.6. Формула степеней резольвенты в пространстве непрерывно дифференцируемых функций первого порядка}
 \label{lemma2.6}
 \textit{Если $ u(x) \in C^1[0,1] $, то операторы $ \Omega_{2r}^k $ имеют представление:}
 \begin{equation}
@@ -1171,34 +1197,35 @@ D^kR_r(L_2)u = R_r(L_2)u^{(k)} + e^{-r(1-x)}u^{(k-1)}(1) - re^{r(1-x)}u^{(k-2)}(
 \begin{array}{c}
 \nonumber
 
-\Omega_{2r}^2u = r^2\biggl\lbrace -\dfrac{1}{r}[(t-x)e^{r(x-t)}u(t)]_x^1 + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}[(t-x)u(t)]_t'dt\biggr\rbrace = \\ = -r(1-x)e^{-r(1-x)}u(1) + r\int\limits_x^1 e^{r(x-t)}[u(t) + (t-x)u'(t)]_t'dt = \\ = -r(1-x)e^{-r(1-x)}u(1) + r \int\limits_x^1 e^{r(x-t)}u(t)dt + r \int\limits_x^1 (t-x)e^{r(x-t)}u'(t)dt = -r(1-x)e^{-r(1-x)}u(1) + \Omega_{2r}u + \dfrac{1}{r}\Omega_{2r}u'.
+\Omega_{2r}^2u = r^2\biggl\lbrace -\dfrac{1}{r}[(t-x)e^{r(x-t)}u(t)]_x^1 + \dfrac{1}{r}\int\limits_x^1 e^{r(x-t)}[(t-x)u(t)]_t'dt\biggr\rbrace = \\ = -r(1-x)e^{-r(1-x)}u(1) + r\int\limits_x^1 e^{r(x-t)}[u(t) + (t-x)u'(t)]_t'dt = \\ = -r(1-x)e^{-r(1-x)}u(1) + r \int\limits_x^1 e^{r(x-t)}u(t)dt + \\ + r \int\limits_x^1 (t-x)e^{r(x-t)}u'(t)dt = -r(1-x)e^{-r(1-x)}u(1) + \Omega_{2r}u + \dfrac{1}{r}\Omega_{2r}u'.
 
 \end{array}
 \end{equation}
 
 Применяем метод математической индукции, как и в лемме 1.6~\eqref{lemma1.6}, приходим к утверждению леммы 2.6~\eqref{lemma2.6}.
 
-\section{Лемма 2.7}
+\section{Лемма 2.7. Приближающие свойства резольвенты в пространствах непрерывных функций.}
 \label{lemma2.7}
 
 \textit{Для $ u(x) \ in C[0,1] $ справедливы соотношения:}
 \begin{equation}
 \begin{array}{c}
 
-\Vert \Omega_{2r}^ku - u \Vert_{C[0,1\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,2,...
+\Vert \Omega_{2r}^ku - u \Vert_{C[0,1-\varepsilon]} \rightarrow 0 $ \textit{при} $ r \rightarrow \infty, k = 1,2,...
 
 \end{array}
 \end{equation}
 
-\textbf{Доказательство.} Для $ k = 1 $ соотношение (2.15) доказано в лемме 2.2~\eqref{lemma2.2}. Пусть $ k \geq 2 $, а $ u(x) \in C^k[0,1] $. Обозначим $ \widetilde\varphi_l(r,x) = - \dfrac{r^l(1-x)^le^{-r(1-x)}}{l!} $.
+\textbf{Доказательство.} Для $ k = 1 $ соотношение (2.15) доказано в лемме 2.2~\eqref{lemma2.2}. Пусть $ k \geq 2 $, а $ u(x) \in C^k[0,1] $. 
+
+Обозначим $ \widetilde\varphi_l(r,x) = - \dfrac{r^l(1-x)^le^{-r(1-x)}}{l!} $.
 
 Из (2.15) имеем:
-
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
-\Vert \Omega_{2r}^ku - u \Vert_{C[0,1\varepsilon]} \leq \Vert \widetilde\varphi_{k-1}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \Vert \Omega_{2r}^{k-1}u - u \Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^ku'\biggr\Vert_{C[0,1-\varepsilon]} \leq \widetilde\varphi_{k-1}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \widetilde\varphi_{k-2}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + ... + \widetilde\varphi_1(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \Vert \Omega_{2r}u - u \Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^ku'\biggr\Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^{k-1}u'\biggr\Vert_{C[0,1-\varepsilon]} + ... + \biggl\Vert \dfrac{1}{r}\Omega_{1r}^2u'\biggr\Vert_{C[0,1-\varepsilon]}.
+\Vert \Omega_{2r}^ku - u \Vert_{C[0,1\varepsilon]} \leq \Vert \widetilde\varphi_{k-1}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \Vert \Omega_{2r}^{k-1}u - u \Vert_{C[0,1-\varepsilon]} + \\\\ + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^ku'\biggr\Vert_{C[0,1-\varepsilon]} \leq \widetilde\varphi_{k-1}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \widetilde\varphi_{k-2}(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \\ + ... + \widetilde\varphi_1(r,x)u(1)\Vert_{C[0,1-\varepsilon]} + \Vert \Omega_{2r}u - u \Vert_{C[0,1-\varepsilon]} + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^ku'\biggr\Vert_{C[0,1-\varepsilon]} + \\ + \biggl\Vert \dfrac{1}{r}\Omega_{2r}^{k-1}u'\biggr\Vert_{C[0,1-\varepsilon]} + ... + \biggl\Vert \dfrac{1}{r}\Omega_{1r}^2u'\biggr\Vert_{C[0,1-\varepsilon]}.
 
 \end{array}
 \end{equation}
@@ -1244,16 +1271,16 @@ D^kR_r(L_2)u = R_r(L_2)u^{(k)} + e^{-r(1-x)}u^{(k-1)}(1) - re^{r(1-x)}u^{(k-2)}(
 \begin{array}{c}
 \nonumber
 
-\Vert \Omega_{2r}^ku \Vert_{C[0,1] \rightarrow C[0,1-\varepsilon]} = \Vert \Omega_{2r}(\Omega_{2r}^{k-1}u) \Vert_{C[0,1-\varepsilon]} = \Vert \Omega_{2r}\Omega_{2r}...(\Omega_{2r}u)\Vert_{C[0,1-\varepsilon]} \leq \Vert u \Vert_{C[0,1]}
+\Vert \Omega_{2r}^ku \Vert_{C[0,1] \rightarrow C[0,1-\varepsilon]} = \Vert \Omega_{2r}(\Omega_{2r}^{k-1}u) \Vert_{C[0,1-\varepsilon]} = \\ = \Vert \Omega_{2r}\Omega_{2r}...(\Omega_{2r}u)\Vert_{C[0,1-\varepsilon]} \leq \Vert u \Vert_{C[0,1]}
 
 \end{array}
 \end{equation}
 
-Наконец, пользуемся теоремой Банаха-Штейнгауза и приходим к утверждению леммы 2.7~\eqref{lemma2.7}.
+Наконец, пользуемся теоремой Банаха-Штейнгауcа~\eqref{theorem Banach Steinhaus} и приходим к утверждению леммы 2.7~\eqref{lemma2.7}.
 
 Рассмотрим теперь операторы $ D^m\Omega_{2r}^ku = \dfrac{d^m}{dx^m}\Omega_{2r}^ku, D' = D $.
 
-\section{Лемма 2.8}
+\section{Лемма 2.8. Формула производной от резольвенты \\ порядка $ m $}
 \label{lemma2.8}
 
 \textit{Операторы  имеют вид}
@@ -1268,7 +1295,7 @@ D^m\Omega_{2r}^ku = r^k\int\limits_x^1 K_{2m}(x,t,k,r)u(t)dt,
 \begin{equation}
 \begin{array}{c}
 
-K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(t-x)^{k-2}}{(k-2)!} + C_m^2r^{m-2}\dfrac{(t-x)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(t-x)^{k-m}}{(k-m)!} + (-1)^m\dfrac{(t-x)^{k-m-1}}{(k-m-1)!}\biggr].
+K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\dfrac{(t-x)^{k-2}}{(k-2)!} + \\ + C_m^2r^{m-2}\dfrac{(t-x)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(t-x)^{k-m}}{(k-m)!} + \\ + (-1)^m\dfrac{(t-x)^{k-m-1}}{(k-m-1)!}\biggr].
 
 \end{array}
 \end{equation}
@@ -1286,7 +1313,7 @@ K_{2m}(x,t,k,r) = e^{r(x-t)} \biggl[ r^m\dfrac{(t-x)^{k-1}}{(k-1)!} - mr^{m-1}\d
 \begin{equation}
 \begin{array}{c}
 
-D^m\Omega_{2r}^ku = r^k\int\limits_x^1 D^mK_{20}(x,t,k,r)dt = r^k\int\limits_x^1 D^m\biggl[\dfrac{(t-x)^{k-1}}{(k-1)!}e^{r(x-t)}\biggr]u(t)dt.
+D^m\Omega_{2r}^ku = r^k\int\limits_x^1 D^mK_{20}(x,t,k,r)dt = \\ = r^k\int\limits_x^1 D^m\biggl[\dfrac{(t-x)^{k-1}}{(k-1)!}e^{r(x-t)}\biggr]u(t)dt.
 
 \end{array}
 \end{equation}
@@ -1309,9 +1336,9 @@ D^m\Omega_{2r}^ku = r^k\int\limits_x^1 D^mK_{20}(x,t,k,r)dt = r^k\int\limits_x^1
 \begin{array}{c}
 \nonumber
 
-DK_{20}(x,t,k,r) = e^{r(x-t)}[-r\widetilde\varphi_{k-1}(x,t) - \widetilde\varphi_{k-2}(x,t)], \\
-D^2K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^2\widetilde\varphi_{k-1}(x,t)-r\widetilde\varphi_{k-2}(x,t) + D[r\widetilde\varphi_{k-1}(x,t) - \widetilde\varphi_{k-2}(x,t)]\rbrace = e^{r(x-t)}\lbrace r^2\widetilde\varphi_{k-1}(x,t)-r\widetilde\varphi_{k-2}(x,t) - r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)\rbrace = e^{r(x-t)}[r^2\widetilde\varphi_{k-1}(x,t) - 2r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)], \\
-D^3K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\widetilde\varphi_{k-2}(x,t) + r\widetilde\varphi_{k-3}(x,t) + D[r^2\widetilde\varphi_{k-1}(x,t) - 2r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)]\rbrace = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\widetilde\varphi_{k-2}(x,t) + r\widetilde\varphi_{k-3}(x,t) - r^2\widetilde\varphi_{k-2}(x,t) + 2r\widetilde\varphi_{k-3}(x,t) - \widetilde\varphi_{k-4}(x,t)\rbrace = e^{r(x-t)}[r^3\widetilde\varphi_{k-1}(x,t) - 3r^2\widetilde\varphi_{k-2}(x,t) + 3r\widetilde\varphi_{k-3}(x,t) - \widetilde\varphi_{k-4}(x,t)].
+DK_{20}(x,t,k,r) = e^{r(x-t)}[-r\widetilde\varphi_{k-1}(x,t) - \widetilde\varphi_{k-2}(x,t)], \\\\
+D^2K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^2\widetilde\varphi_{k-1}(x,t)-r\widetilde\varphi_{k-2}(x,t) + \\ + D[r\widetilde\varphi_{k-1}(x,t) - \widetilde\varphi_{k-2}(x,t)]\rbrace = e^{r(x-t)}\lbrace r^2\widetilde\varphi_{k-1}(x,t) - \\ - r\widetilde\varphi_{k-2}(x,t) - r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)\rbrace = \\ = e^{r(x-t)}[r^2\widetilde\varphi_{k-1}(x,t) - 2r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)], \\\\
+D^3K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\widetilde\varphi_{k-2}(x,t) + \\ + r\widetilde\varphi_{k-3}(x,t) + D[r^2\widetilde\varphi_{k-1}(x,t) - 2r\widetilde\varphi_{k-2}(x,t) + \widetilde\varphi_{k-3}(x,t)]\rbrace = \\ = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\widetilde\varphi_{k-2}(x,t) + r\widetilde\varphi_{k-3}(x,t) - r^2\widetilde\varphi_{k-2}(x,t) + \\ + 2r\widetilde\varphi_{k-3}(x,t) - \widetilde\varphi_{k-4}(x,t)\rbrace = e^{r(x-t)}[r^3\widetilde\varphi_{k-1}(x,t) - \\ - 3r^2\widetilde\varphi_{k-2}(x,t) + 3r\widetilde\varphi_{k-3}(x,t) - \widetilde\varphi_{k-4}(x,t)].
 
 \end{array}
 \end{equation}
@@ -1320,7 +1347,7 @@ D^3K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\wide
 
 С учётом этого повторяем дословно дальнейшие рассуждения в доказательстве леммы 1.8~\eqref{lemma1.8} и приходим к утверждению леммы 2.8~\eqref{lemma2.8}.
 
-\section{Лемма 2.9}
+\section{Лемма 2.9. Приближающие свойства производной от резольвенты порядка $ m $ в пространствах гладких функций.}
 \label{lemma2.9}
 
 \textit{При $ k \geq 2, m = 1,...,k-1 $ для любой функции $ u(x) \in C^{k-1}[0,1] $ справедливы соотношения:}
@@ -1331,13 +1358,12 @@ D^3K_{20}(x,t,k,r) = e^{r(x-t)}\lbrace r^3\widetilde\varphi_{k-1}(x,t)-2r^2\wide
 
 \end{array}
 \end{equation}
-
 \textbf{Доказательство.} Пусть $ k = 2 $. Тогда в соответствии с (2.20), интегрируя по частям, получим:
 \begin{equation}
 \begin{array}{c}
 \nonumber
 
-D\Omega_{2r}^2u = r^2 \int\limits_x^1 \dfrac{d}{dx}[e^{r(x-t)}(t-x)]u(t)dt = -r^2\int\limits_x^1 \dfrac{d}{dt}[e^{r(x-t)}(x-t)](u(t)dt = -r^2[[e^{r(x-t)}(x-t)(u(t)]_x^1 + r^2\int\limits_x^1 e^{r(x-t)}(t-x)u'(t)dt = -r^2[[e^{-r(1-x)}(1-x)(u(1) + r^2\int\limits_x^1 e^{r(x-t)}(t-x)u'(t)dt.
+D\Omega_{2r}^2u = r^2 \int\limits_x^1 \dfrac{d}{dx}[e^{r(x-t)}(t-x)]u(t)dt = \\ = -r^2\int\limits_x^1 \dfrac{d}{dt}[e^{r(x-t)}(x-t)](u(t)dt = -r^2[e^{r(x-t)}(x-t)(u(t)]_x^1 + \\ + r^2\int\limits_x^1 e^{r(x-t)}(t-x)u'(t)dt = -r^2[e^{-r(1-x)}(1-x)(u(1) + r^2\int\limits_x^1 e^{r(x-t)}(t-x)u'(t)dt.
 
 \end{array}
 \end{equation}
@@ -1360,8 +1386,8 @@ D\Omega_{2r}^2u = r^2 \int\limits_x^1 \dfrac{d}{dx}[e^{r(x-t)}(t-x)]u(t)dt = -r^
 
 D^m\Omega_{2r}^kk = r^k \int_x^1 D^m K_{20}(x,t,k,r)u(t)dt, \\
 \int_x^1 D^mK_{20}(x,t,k,r)u(t)dt = \int\limits_x^1 D(D^{m-1}K_{20}(x,t,k,r))u(t)dt = \\
-= - \int\limits_x^1 \dfrac{d}{dt}(D^{m-1}K_{20}(x,t,k,r))u(t)dt = - [D^{m-1}K_{20}(x,t,k,r)]_x^1 + \int\limits_x^1 D^{m-1}K_{20}(x,t,k,r)u'(t)dt = -[D^{m-1}K_{20}(x,t,k,r)]_{t=1}u(1) + \int\limits_x^1 D^{m-1}K_{20}(x,t,k,r)u'(t)dt = \\
-= -[D^{m-1}K_{20}(x,t,k,r)]_{t=1}u(1) - [D^{m-2}K_{20}(x,t,k,r)]_{t=1}u'(1) - [D^2K_{20}(x,t,k,r)]_{t=1}u^{(m-3)}(1) - [DK_{20}(x,t,k,r)]_{t=1}u^{(m-2)}(1) - K_{20}(x,t,k,r)u^{(m-1)}(1) + \int\limits_x^1 K_{20}(x,t,k,r)u^{(m)}(t)dt.
+= - \int\limits_x^1 \dfrac{d}{dt}(D^{m-1}K_{20}(x,t,k,r))u(t)dt = - [D^{m-1}K_{20}(x,t,k,r)]_x^1 + \\ + \int\limits_x^1 D^{m-1}K_{20}(x,t,k,r)u'(t)dt = -[D^{m-1}K_{20}(x,t,k,r)]_{t=1}u(1) + \\ = \int\limits_x^1 D^{m-1}K_{20}(x,t,k,r)u'(t)dt = \\
+= -[D^{m-1}K_{20}(x,t,k,r)]_{t=1}u(1) - [D^{m-2}K_{20}(x,t,k,r)]_{t=1}u'(1) - \\ - [D^2K_{20}(x,t,k,r)]_{t=1}u^{(m-3)}(1) - [DK_{20}(x,t,k,r)]_{t=1}u^{(m-2)}(1) - \\ - K_{20}(x,t,k,r)u^{(m-1)}(1) + \int\limits_x^1 K_{20}(x,t,k,r)u^{(m)}(t)dt.
 
 \end{array}
 \end{equation}
@@ -1380,7 +1406,7 @@ D^m\Omega_{2r}^kk = r^k \int_x^1 D^m K_{20}(x,t,k,r)u(t)dt, \\
 откуда следует утверждение леммы 2.9~\eqref{lemma2.9}.
 
 \chapter{Восстановление функции вместе с её производными}
-\section{Приближение функции и её производных на $ [0,1] $ с помощью оператора $ \Omega_r $}
+\section{Приближение функции и её производных на $ [0,1] $ с помощью оператора резольвенты}
 С помощью оператора $ \Omega_{1r} $ из главы 1 и оператора $ \Omega_{2r} $ из главы 2 а так же их степеней можно получить приближение к непрерывной функции и её производным во внутренних точках отрезка $ [0,1] $. Теперь можно построить оператор, позволяющий получить приближение к непрерывной функции и её производным на всём отрезке.
 
 Рассмторим оператор $ \Omega_r $, являющийся комбинацией операторов $ \Omega_{1r}, \Omega_{2r} $.
@@ -1515,8 +1541,8 @@ r = r(\delta), r(\delta) \rightarrow \infty, (r(\delta))^{1/2}\delta \rightarrow
 
 \end{array}
 \end{equation}
-первое из этих условий вытекает из теоремы 3.1~\eqref{theorem3.1}.
-Для доказательства второго покажем, что $ \Vert \Omega_r \Vert_{L_2 \rightarrow L_\infty} $ ограничена при каждом фиксированном $ r $.
+Первое из этих условий вытекает из теоремы 3.1~\eqref{theorem3.1}.
+Для доказательства второго покажем, что $ \Vert \Omega_r \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} $ ограничена при каждом фиксированном $ r $.
 
 В нашем случае имеем:
 \begin{equation}
@@ -1550,12 +1576,51 @@ Ku = \int\limits_0^1 K(x,t)u(t)dt, K:L_2[0,1] \rightarrow C[a,b], a \leq x \leq 
 \begin{array}{c}
 \nonumber
 
-\Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = r \max\limits_{0 \leq x \leq 1/2} \biggl(\int\limits_0^1 e^{2r(x-t)}dt\biggr)^{1/2}, \\
+\Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = r \max\limits_{0 \leq x \leq 1/2} \biggl(\int\limits_x^1 e^{2r(x-t)}dt\biggr)^{1/2}, \\\\
 \int\limits_x^1 e^{2r(x-t)}dt = -\dfrac{1}{2r}e^{2r(x-t)}\biggl|_x^1 = \dfrac{1}{2r}(1-e^{-2r(1-x)}), \\
-\max\limits_{0 \leq x \leq 1/2}(1-e^{-2r(1-x)}) = 1 - e^{-2r} \Rightarrow \Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = \dfrac{r^{1/2}}{\sqrt{2}}( 1 - e^{-2r})^{1/2}
+\max\limits_{0 \leq x \leq 1/2}(1-e^{-2r(1-x)}) = 1 - e^{-2r} \Rightarrow \Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = \dfrac{r^{1/2}}{\sqrt{2}}( 1 - e^{-2r})^{1/2}, \\
+\max\limits_{0\leq x \leq 1/2}(1-e^{-2r(1-x)}) = 1 + (1-e{-2r}) - 1 = \\\\ = 1 + \dfrac{((1-e^{-2r})^{1/2}-1)((1-e^{-2r})^{1/2}+1)}{(1-e^{-2r})^{1/2}+1} = \\\\ = 1 + \dfrac{1-e^{-2r}-1}{(1-e^{-2r})^{1/2}+1} = 1 - \dfrac{e^{-2r}}{(1-e^{-2r})^{1/2}+1} = 1 + O(e^{-2r}).
 
 \end{array}
 \end{equation}
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{2r} \Vert_{L_2[0,1] \rightarrow C[0,1/2]} = \dfrac{r^{1/2}}{\sqrt{2}} + O(r^{1/2}e^{-2r})
+
+\end{array}
+\end{equation}
+Аналогичным образом из (3.1) получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert \Omega_{1r} \Vert_{L_2[0,1] \rightarrow C[1/2,1]} = r \max\limits_{1/2 \leq x \leq 1} \biggl(\int\limits_0^x e^{-2r(x-t)}dt\biggr)^{1/2}, \\\\
+\int\limits_0^x e^{-2r(x-t)}dt = \dfrac{1}{2r}e^{-2r(x-t)}\biggl|_0^x = \dfrac{1}{2r}(1-e^{-2rx}), \\\\
+\max\limits_{1/2 \leq x \leq 1}(1-e^{-2rx}) = 1 - e^{-2r}
+
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{1r} \Vert_{L_2[0,1] \rightarrow C[1/2,1]} = \dfrac{r^{1/2}}{\sqrt{2}} + O(r^{1/2}e^{-2r})
+
+\end{array}
+\end{equation}
+
+Из формул (3.9), (3.11) и (3.12) получаем:
+\begin{equation}
+\begin{array}{c}
+
+\Vert \Omega_{r} \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} = \dfrac{r^{1/2}}{\sqrt{2}} + O(r^{1/2}e^{-2r}),
+
+
+\end{array}
+\end{equation}
+а из (3.13) следует утверждение теоремы~3.3~\eqref{theorem3.3}.
+
 \section{Постановка задачи восстановления производной функции порядка $ m $}
 Пусть $ u(x) \in C^{k-1}[0,1] $ задана приближением $ f_\delta(x) $ по метрике пространства $ L_2[0,1] $.
 Ставится задача по $ f_\delta $ и $ \delta $ найти равномерное приближение $ u^{(m)}(x), 0 \leq m \leq k-1 $.
@@ -1581,5 +1646,307 @@ r = r(\delta), r(\delta) \rightarrow \infty, (r(\delta))^{\frac{2m+1}{2}}\delta 
 
 \end{array}
 \end{equation}
+
+\textbf{Доказательство.} При $ k = 1 $ и $ m = 0 $ теорема 3.4~\eqref{theorem3.4} эквивалентна теореме 3.3~\eqref{theorem3.3}.
+
+Так как для опереторов $ D^m \Omega_r^{(k)} $ по теореме 3.2~\eqref{theorem3.2} выполняется сходимость $ \Vert D^m \Omega_r^{(k)}u -u^{(m)} \Vert_{L_{\infty[0,1]} \rightarrow 0} $ при $ r \rightarrow \infty $, то необходимо доказать ограниченность $ \Vert D^m \Omega_r^{(k)} \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} $ при каждом фиксированном $ r $.
+
+Для нахождения согласования $ r(\delta) $ необходимо найти асимптотику по $ r $ при $ r \rightarrow \infty $ для указанных норм:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D^m \Omega_r^{(k)} \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} = \max\lbrace \Vert D^m \Omega_{2r}^{(k)} \Vert_{L_1[0,1] \rightarrow C[0,1/2]} , \Vert D^m \Omega_{1r}^{(k)} \Vert_{L_2[0,1] \rightarrow C[1/2,1]} \rbrace
+
+\end{array}
+\end{equation}
+
+Рассмотрим сначала норму: $ \Vert D^m \Omega_{1r}^{(k)} \Vert_{L_2[0,1] \rightarrow C[1/2,1]} $.
+
+Из формул (1.21), (1.22) и (3.10) получаем:
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m \Omega_{1r}^{(k)} \Vert_{L_2[0,1] \rightarrow C[1/2,1]} = r^k \max\limits_{1/2 \leq x \leq 1} \biggl(\int\limits_0^x K_{1m}^2(x,t,k,r)\biggr)^{1/2}
+
+\end{array}
+\end{equation}
+где
+\begin{equation}
+\begin{array}{c}
+
+K_{1m}^2(x,t,k,r) = e^{-2r(x-t)}\biggl[ r^m\dfrac{(x-t)^{k-1}}{(k-1)!} - nr^{m-1}\dfrac{(x-t)^{k-2}}{(k-2)!} + \\ + C_m^2r^{m-2}\dfrac{(x-t)^{k-3}}{(k-3)!} + ... + (-1)^{m-1}C_m^{m-1}r\dfrac{(x-t)^{k-m}}{(k-m)!} + \\ + (-1)^m\dfrac{(x-t)^{k-m-1}}{(k-m-1)!} \biggr]^2 = e^{-2r(x-t)}[r^2(x-t)^2-2r(x-t)+1]
+
+\end{array}
+\end{equation}
+Пусть сначала $k = 2, m = 1 $. Тогда с соответствии с (3.16):
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+K_{11}^2(x,t,k,r)=e^{-2r(x-t)}[r(x-t)-1]^2 = e^{-2r(x-t)}[r^2(x-t)^2 - 2r(x-t) + 1]
+
+\end{array}
+\end{equation}
+Сделаем замену: $ x-t=\tau $. Тогда:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+K_{11}^2(\tau,2,r)=1 - 2r\tau + r^2\tau  \\
+I = \int\limits_0^x K_{11}^2(x,t,2,r)dt = \int\limits_0^x K_{11}^2(\tau,2,r)d\tau \\
+I = I_0 -2rI_1 + r^2I_2, $ где $ \\
+I_0 = \int\limits_0^x e^{-2r\tau}d\tau , I_1 = \int\limits_0^x \tau e^{-2r\tau}d\tau , I_2 = \int\limits_0^x \tau^2 e^{-2r\tau}d\tau . \\
+\end{array}
+\end{equation}
+Оценим эти интегралы:
+\begin{equation}
+\begin{array}{c}
+I_0 = -\dfrac{1}{2r}(e^{-2rx}-1) = \dfrac{1}{2r}(1-e^{-2rx}), \\
+I_1 = - \dfrac{1}{2r}\tau e^{-2r\tau}\int\limits_0^x d\tau + \dfrac{1}{2r}\int\limits_0^x e^{-2rx}d\tau = -\dfrac{x}{2r}e^{-2rx} + \dfrac{1}{2r}I_0, \\
+I_2 = -\dfrac{1}{2r}\tau e^{-2r\tau} \biggl\vert_0^x + \dfrac{1}{2r}\int\limits_0^x 2\tau e^{-2r\tau}d\tau = -\dfrac{x^2}{2r}e^{-2rx} + \dfrac{1}{r}I_1 = \\ = -\dfrac{x^2}{2r}e^{-2rx} + \dfrac{1}{r}\biggl( -\dfrac{x}{2r}e^{-2rx} + \dfrac{1}{2r}I_0 \biggr).
+
+\end{array}
+\end{equation}
+Так как $ x \in [1/2, 1] $, то:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I_0 = \dfrac{1}{2r} + O(\dfrac{1}{r}e^{-r}), \\
+I_1 = O(\dfrac{1}{r}e^{-r}) + \dfrac{1}{2r}\biggl( \dfrac{1}{2r} + O(\dfrac{1}{r}e^{-r}) \biggr) = \dfrac{1}{4r^2} + O(\dfrac{1}{r}e^{-r}), \\
+I_2 = O(\dfrac{1}{r}e^{-r}) + \dfrac{1}{r}\biggl( \dfrac{1}{4r^2} + O(\dfrac{1}{r}e^{-r}) \biggr) = \dfrac{1}{4r^3} + O(\dfrac{1}{r}e^{-r}).
+
+\end{array}
+\end{equation}
+Получим:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I = \dfrac{1}{2r} + O(\dfrac{1}{r}e^{-r}) - 2r\biggl( \dfrac{1}{4r^2} + O(\dfrac{1}{r}e^{-r}) \biggr) + r^2\biggl( \dfrac{1}{4r^3} + O(\dfrac{1}{r}e^{-r}) \biggr) = \\ = \dfrac{1}{4r} + O(re^{-r}) = \dfrac{1}{4r}(1 + O(r^2e^{-r}))
+
+\end{array}
+\end{equation}  
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I^{1/2} = \dfrac{1}{2\sqrt{r}}(1 + O(r^2e^{-r}))^{1/2}
+
+\end{array}
+\end{equation}  
+Так как:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+(1 + O(r^2e^{-r}))^{1/2} = 1 + O(r^2e^{-r})
+
+\end{array}
+\end{equation}  
+то:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I^{1/2} = \dfrac{1}{2\sqrt{r}}(1 + O(r^2e^{-r}))
+
+\end{array}
+\end{equation}
+Из (3.15) получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D^m \Omega_{1r}^2 \Vert_{L_2[0,1] \rightarrow C[1/2,1]} = r^2\dfrac{1}{2\sqrt{r}}(1 + O(r^2e^{-r})) = \dfrac{1}{2} r^{3/2}(1 + O(r^2e^{-r})).
+
+\end{array}
+\end{equation}
+
+Рассмотрим $ \Vert D^m \Omega_{12}^k \Vert_{L_2[0,1] \rightarrow C[1/2,1]} $, где $ k > 2, m = 0,...,k-1 $. Раскроем скобки, стоящие в правой части (3.хз) и выполним замены $ x-t = \tau , k - 1 = k_1 $:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+K_{1m}^2(x,t,k,r) = P_{1m}(\tau ,r) $ ,где $ P_{1m}(\tau ,r) $ имеет вид:$ \\\\
+P_{1m}(\tau ,r) = a_0\tau^{2k_1-2m} + a_1r\tau^{2k_1-2m+1} + a_2r^2\tau^{2k_1-2m+2} + \\ + ... + a_lr^l\tau^{2k_1-2m+l} + a_{2m}r^{2m}\tau^{2k_1}
+
+\end{array}
+\end{equation}
+где $ a_j, j = 0,...,2m $ -константы, выраженные через произведение констант, стоящих при степенях $ r^{m-l}(x-t)^{k-l-1}, l = 0,...,m $ в квадратной скобке выражения (3.16).
+
+Тогда интеграл $ I = \int\limits_0^x K_{1m}^2(x,t,k,r)dt, $, стоящий в правой части (3.15) можно представить в виде:
+\begin{equation}
+\begin{array}{c}
+
+I = a_0I_0 + a_1rI_1 + ... + a_lr^lI_l + ... + a_{2m}r^{2m}I_{2m},
+
+\end{array}
+\end{equation}
+где:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I_0 = \int\limits_0^x \tau^{2k_1-2m}e^{-2r\tau}d\tau , \\
+I_1 = \int\limits_0^x \tau^{2k_1-2m+1}e^{-2r\tau}d\tau \\
+... \\
+I_l = \int\limits_0^x \tau^{2k_1-2m+l}e^{-2r\tau}d\tau \\
+... \\
+I_{2m} = \int\limits_0^x \tau^{2k_1}e^{-2r\tau}d\tau
+
+\end{array}
+\end{equation}
+тогда мы можем записать:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I_l = \dfrac{(2k_1 -2m +l)!}{(2r)^{2k_1-2m+l+1}} + O_e
+
+\end{array}
+\end{equation}
+где $ l = 0,...,2m $, а $ O_e $ - слагаемые, содержащие $ e^{-2rx} $.
+Так, как $ x \in [1/2,1] $, то сумма указанных слагаемых: $ O_e = O(r^{-1}e^{-r}) $. Таким образом мы получим:
+\begin{equation}
+\begin{array}{c}
+
+I_l = \dfrac{(2k_1 -2m + l)!}{(2r)^{2k_1-2m+l+1}} + O(r^{-1}e^{-r})
+
+\end{array}
+\end{equation}
+где:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I_0 = \dfrac{(2k_1 -2m)!}{(2r)^{2k_1-2m+1}} + O(r^{-1}e^{-r}) \\
+... \\
+I_{2m} = \dfrac{(2k_1)!}{(2r)^{2k_1+1}} + O(r^{-1}e^{-r})
+
+\end{array}
+\end{equation}
+Подставим в (3.18):
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+r^lI_l = \dfrac{(2k_1 -2m + l)!}{2^{2k_1-2m+l+1}r^{2k_1-2m+1}} + O(r^{l-1}e^{-r}), l = 0,...,2m
+
+\end{array}
+\end{equation}
+
+Из всех слагаемых $ O(r^{l-1}e^{-r}), l = 0,...,2m $ самое большое при $ l = 2m $, т.е $ O(r^{2m-1}e^{-r}) $. Запишем интеграл $ I $ в следующем виде:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I = C\dfrac{r^{-(2k-2m+1)}}{1} + O(r^{2m-1}e^{-r}), $ где $ C = \sum\limits_{c=0}^{2m}c_l, \\
+c_l = \dfrac{a_l}{2^{2k_1 - 2m + l + 1}}(2k_1 - 2m + l)!
+
+\end{array}
+\end{equation}
+тогда:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I = cr^{-(2k_1 - 2m + 1)}(1 + O(r^{2k_1}e^{-r}))
+
+\end{array}
+\end{equation}
+Тогда получим:
+\begin{equation}
+\begin{array}{c}
+
+I^{1/2} = c^{1/2}r^{-(k_1 - m + 1/2)}(1 + O(r^{2k_1-r}))
+
+\end{array}
+\end{equation}
+При этом $ c \neq 0 $. Из (3.15) и (3.20) получаем:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert D^m \Omega_{1r}^k \Vert_{L_2[0,1] \rightarrow C[1/2,1]} = c^{1/2}r^{m+ 1/2}(1 + O(r^{2k-1}e^{-r}))
+
+\end{array}
+\end{equation}
+Получим оценку:
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m \Omega_{1r}^k \Vert_{L_2[0,1] \rightarrow C[1/2,1]} = c^{1/2}r^{\frac{2m+1}{2}} + O(r^{2k-m-3/2}e^{-r})
+
+\end{array}
+\end{equation}
+Мы получили оценку для нормы $ \Vert D^m \Omega_{1r}^k \Vert_{L_2[0,1] \rightarrow C[1/2,1]} $.
+
+Теперь рассмотрим норму: $ \Vert D^m \Omega_{2r}^{(k)} \Vert_{L_1[0,1] \rightarrow C[0,1/2]} $.
+
+Для получения оценки проведём те же рассуждения что в первой части доказательства с заменой (1.21) из леммы 1.8~\eqref{lemma1.8} на (2.18) из леммы 2.8~\eqref{lemma2.8}, $ K_{1m}(x,t,k,r) $ на $ K_{2m}(x,t,k,r) $, приведённое в (2.19) из леммы 2.8~\eqref{lemma2.8}, $ x - t = t - x $, $ \int\limits_0^x $ на $ \int\limits_x^1 $, $ \tau = t - x $ на $ \tau = x - t $, а $ e^{-2rx} $ на $ e^{-2r(1-x)} $.
+
+Учитывая, что $ 0 \leq x \leq \dfrac{1}{2} $ при вычислении $ I_l $ имеет вид:
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+I_l = \int\limits_x^1 e^{-2r\tau}\tau^{2k_1 - 2m + 1}d\tau
+
+\end{array}
+\end{equation}
+мы придём к выражению, стоящему в правой части выражения (3.19). Для сходимости оператора справедливо (3.21) с заменой $ \Omega_{1r} $ на $ \Omega_{2r} $. 
+
+Отсюда справедлива оценка:
+\begin{equation}
+\begin{array}{c}
+
+\Vert D^m \Omega_r^{(k)} \Vert_{L_2[0,1] \rightarrow L_\infty[0,1]} = c^{1/2}r^{\dfrac{2m+1}{2}} + O(r^{2k-m-3/2}e^{-r})
+
+\end{array}
+\end{equation}
+Из выражений (3.9), (3.22) следует что константа $ c \neq 0 $, в противном случае норма оператора $ \rightarrow 0 $ при $ r \rightarrow \infty $ вне зависимости от $ r $.
+
+$ D^m\Omega_r^{k} $ апроксимирует неограниченный оператор. Обозначим для краткости $ B_r = D^m\Omega_r^{k} $.
+
+Покажем, что последовательность $B_ru$ сходится в $ L_\infty $ для любой функции $ u \in L_2 $, т.е. $ u(x) \in C^m[0,1] $.
+
+Рассмотрим $ u_\varepsilon \in C^m[0,1] $, такой чтобы $ \Vert u_\varepsilon - u \Vert_{L_2[0,1]} \leq \varepsilon $
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+\Vert B_{r'}u - B_{r''}u \Vert_{L_\infty} \leq \Vert (B_{r'} - B_{r''})u_\varepsilon \Vert_{L_\infty} + \\ + \Vert (B_{r'} - B_{r''})(u-u_\varepsilon) \Vert_{L_\infty} \leq \Vert (B_{r'} - B_{r''})u_\varepsilon \Vert_{L_\infty} + 2K\varepsilon
+
+\end{array}
+\end{equation}
+где $ K $ ограниченный оператор при $ C \neq 0 $. Последовательность $ B_ru_\varepsilon $ сходится по теореме 3.2~\eqref{theorem3.2}, значит она является фундаментальной, а отсюда и из приведённой выше оценки получаем, что $ B_ru $ сходится при $ r \rightarrow \infty $ и по теореме Банаха-Штейнгауса $ B $ ограничен.
+\begin{equation}
+\begin{array}{c}
+\nonumber
+
+Bu = D^mu, u \in C^m[0,1] \\
+\Vert D^mu \Vert_{L_\infty} < K\Vert u \Vert_{L_2} \forall u \in C^m
+
+\end{array}
+\end{equation}
+чего не может быть.
+
+Равенство (3.22) и теорема 3.2~\eqref{theorem3.2} приводят к утверждению теоремы 3.4~\eqref{theorem3.4}
+
+\conclusions
+
+В данной работе, отправляясь от резольвенты простейшего дифференциального оператора первого порядка, построен оператор, позволяющий равномерно аппроксимировать непрерывные функции и их производные любого порядка на отрезках $ [0,\varepsilon] $ и $ [\varepsilon,1] $. Далее задача была расширена на отрезок $ [0,1] $, в результате чего были построены семейства интегральных операторов, которые можно использовать для аппроксимации решений некорректно поставленных задач. Далее были поставлены задачи восстановления функции и задачи восстановления производной функции порядка $ m $, далее эти задачи были решены с использованием построенных семейств интегральных операторов. 
+
+Решённые задачи позволяют находить решения для неустойчивых (некорректных) задач. Данные выводы очень важны, так как неустойчивые (некорректные) задачи возникают при описании многих физических явлений: в геофизике, спектроскопии,  астрофизике и т.д., а также в теоретических исследованиях, например, в теории приближений. В связи с развитием необходимости решения данных задач нельзя недооценить целесообразность развития методов их решения.
+
+%\biblio
+%
+%\appendix
+%\makeatletter
+%  \gdef\thechapter{\@Asbuk\c@chapter}
+%\makeatother
+%\singlespacing
+
 
 \end{document}
